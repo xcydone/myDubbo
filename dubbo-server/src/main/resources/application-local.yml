@@ -1,0 +1,46 @@
+dubbo:
+  application:            #应用配置，用于配置当前应用信息，不管该应用是提供者还是消费者。
+    name: Provider
+  registry:               #注册中心配置，用于配置连接注册中心相关信息。
+    address: zookeeper://127.0.0.1:2181
+  protocol:     #协议配置，用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受。
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.crossyf.dubbo.**.service
+  provider:
+    timeout: 60000
+  consumer:
+    check: false
+    timeout: 300000
+
+spring:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  main:
+     allow-bean-definition-overriding: true
+
+redis:
+  hostName: localhost
+  port: 6379
+  database: 0
+  timeout: 10000
+  maxIdle: 300
+  maxActive: 600
+  maxTotal: 1000
+  maxWaitMillis: 1000
+  minEvictableIdleTimeMillis: 300000
+  numTestsPerEvictionRun: 1024
+  timeBetweenEvictionRunsMillis: 30000
+  testOnBorrow: true
+  testWhileIdle: true
+
+zookeeper:
+  event: true
+  hosts: 127.0.0.1:2181
+  namespace: auplat
+  digest: null
+  cacheExpiredEvent: 60000

@@ -1,0 +1,9 @@
+server:
+  port: 8094
+  servlet:
+    context-path: /dubbo-server
+
+spring:
+  application:
+    name: dubbo-server
+  profiles.active: local
