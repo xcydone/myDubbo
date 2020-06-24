@@ -1,0 +1,34 @@
+server:
+  port: 8092
+  servlet:
+    context-path: /dubbo-web
+
+dubbo:
+  application:           #应用配置，用于配置当前应用信息，不管该应用是提供者还是消费者。
+    name: Customer
+    id: Customer
+  registry:               #注册中心配置，用于配置连接注册中心相关信息。
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.crossyf.dubbo.*
+  consumer:
+    check: false
+    timeout: 300000
+
+spring:
+  http:
+    multipart:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+
+swagger:
+  basePackage: com.crossyf.dubbo
+  title: 系统文档api
+  description: 系统文档api描述
+  version: 1.0.0
+  enable: true
