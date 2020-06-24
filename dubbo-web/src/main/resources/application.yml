@@ -1,7 +1,7 @@
 server:
   port: 8092
   servlet:
-    context-path: /dubbo-web
+    context-path: /
 
 dubbo:
   application:           #应用配置，用于配置当前应用信息，不管该应用是提供者还是消费者。
@@ -32,3 +32,9 @@ swagger:
   description: 系统文档api描述
   version: 1.0.0
   enable: true
+
+# 加密secret
+jwt:
+  secret: ojbkqOMwYE31y5aea8SkoVee3q
+# 默认过期30分钟，单位：秒
+  expire-second: 1800
