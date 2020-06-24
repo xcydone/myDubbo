@@ -22,7 +22,7 @@
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <tomcat.version>8.5.42</tomcat.version>
         <dubbo.spring-boot>2.7.5</dubbo.spring-boot>
-        <zookeeper.version>3.4.10</zookeeper.version>
+        <zookeeper.version>3.4.14</zookeeper.version>
         <zkclient.version>0.5</zkclient.version>
         <dubbo-spring-boot>1.0.0</dubbo-spring-boot>
     </properties>
