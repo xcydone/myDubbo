@@ -1,6 +1,9 @@
 import fetch from '@/utils/fetch'
 
 export default {
+  sayFirst() {
+    return fetch(`/first/sayFirst`, {}, {method: 'get'})
+  },
 
   /*// 根据名字查询菜单
   getShopList(params = {}) {

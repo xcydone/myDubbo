@@ -86,10 +86,23 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: ''
+    }
+  },
+  mounted (){
+    // 初始化验证码
+    this.saySome();
+  },
+  method: {
+    saySome(){
+      this.api.sayFirst().then( res => {
+        if(res.data.code == 200){
+          msg = 'Welcome to Your Vue.js App'
+          console.log("接口调用成功")
+        }
+      })
     }
   }
 }

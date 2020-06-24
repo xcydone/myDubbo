@@ -6,6 +6,7 @@ import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
 import cn.hutool.crypto.symmetric.SymmetricCrypto;
 import com.crossyf.dubbo.common.captcha.DubboCaptcha;
 import com.crossyf.dubbo.common.constant.CaptchaConstant;
+import com.crossyf.dubbo.common.enums.ResultEnum;
 import com.crossyf.dubbo.common.response.Result;
 import com.crossyf.dubbo.common.utils.JWTUtil;
 import com.crossyf.dubbo.common.utils.ServletUtil;
@@ -97,5 +98,12 @@ public class LoginController {
         response.setHeader("Access-Control-Expose-Headers","token");
         response.setHeader("Cache-Control","no-store");
         response.setHeader("token", token);
+    }
+
+    @ApiOperation(value = "拦截跳转登录")
+    @GetMapping("/toLogin")
+    public Result toLogin() {
+        ResultEnum resultEnum = ResultEnum.TOKEN_ERROR;
+        return Result.fail(resultEnum.getCode(), resultEnum.getMsg());
     }
 }
