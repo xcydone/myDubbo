@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <img src="@/assets/logo.png">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msgInfo }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -88,20 +88,18 @@
 export default {
   data () {
     return {
-      msg: ''
+      msgInfo: ''
     }
   },
-  mounted (){
+  mounted(){
     // 初始化验证码
     this.saySome();
   },
-  method: {
+  methods: {
     saySome(){
       this.api.sayFirst().then( res => {
-        if(res.data.code == 200){
-          msg = 'Welcome to Your Vue.js App'
-          console.log("接口调用成功")
-        }
+        this.msgInfo = res.data.data
+        console.log("接口调用成功")
       })
     }
   }

@@ -1,5 +1,6 @@
 package com.crossyf.dubbo.first.controller;
 
+import com.crossyf.dubbo.common.response.Result;
 import com.crossyf.dubbo.first.api.IFirstApi;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ public class firstController {
 
     @GetMapping("/sayFirst")
     @ResponseBody
-    public String sayFirst(){
-        return firstApi.sayFirst("caifang");
+    public Result sayFirst(){
+        return Result.ok(firstApi.sayFirst("caifang"));
     }
 }

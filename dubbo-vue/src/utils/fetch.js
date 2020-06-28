@@ -3,6 +3,7 @@
  */
 import axios from 'axios'
 import config from '@/config'
+import { Message } from 'element-ui'
 import { deepClone } from './index'
 import store from '@/store'
 import router from '@/router'
