@@ -46,6 +46,13 @@ public class RedisTestController extends BaseController {
         }
     }
 
+    /**
+    * @Description:  设置和获取redis中的数据
+    * @Param: []
+    * @return: org.springframework.ui.ModelMap
+    * @Author: caifang
+    * @Date: 2020/7/8
+    */
     @RequestMapping(value="/setGetUser")
     @ResponseBody
     public ModelMap setGetUser(){
