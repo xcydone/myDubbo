@@ -25,6 +25,11 @@ spring:
       enabled: true
   main:
     allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 345678
+    url: jdbc:mysql://127.0.0.1:3306/xcydone?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8
+    username: root
 
 swagger:
   basePackage: com.crossyf.dubbo

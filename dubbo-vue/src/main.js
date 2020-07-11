@@ -7,7 +7,7 @@ import ElementUI from 'element-ui'
 import Print from 'vue-print-nb'
 import api from './api'
 
-Vue.prototype.baseUrl = 'http://localhost:8100/'
+Vue.prototype.baseUrl = 'http://127.0.0.1:8092/'
 Vue.prototype.api = api
 
 Vue.use(ElementUI)

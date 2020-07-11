@@ -7,3 +7,10 @@ spring:
   application:
     name: dubbo-server
   profiles.active: local
+
+mybatis-plus:
+  mapper-locations:
+    classpath: mapper/**/*.xml
+  typeAliasesPackage: com.crossyf.dubbo.*.entity
+  configuration:
+    map-underscore-to-camel-case: true

@@ -6,7 +6,7 @@
       <!--<el-button type="text" @click="dialogVisible = true">新增</el-button>-->
       <!--<el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>-->
       <el-upload
-        ref="upload"
+        ref="uploadRef"
         :action="actionUrl"
         :data="uploadData"
         :file-list="fileList"
@@ -83,7 +83,7 @@
 
         // 上传文件相关
         actionUrl: '',
-        uploadData: {operId: 'caifang', operDate: 20200708},
+        uploadData: {operId : 'caifang'},
         fileList: [],
 
 
@@ -91,7 +91,8 @@
     },
     mounted(){
       this.saySome();
-      this.actionUrl = "http://localhost:8092/order/uploadFile/";
+      // configindex中已经设置了跳转url，这里直接配置周末的路径即可
+      this.actionUrl = "order/uploadFile";
     },
     methods: {
       saySome(){
@@ -144,7 +145,7 @@
       },
 
       submitData(){
-        this.$refs.upload.submit();
+        this.$refs.uploadRef.submit();
       }
     }
   }
