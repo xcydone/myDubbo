@@ -5,7 +5,6 @@ import com.crossyf.dubbo.common.utils.MinioTemplate;
 import com.crossyf.dubbo.first.api.IOrderItemService;
 import com.crossyf.dubbo.first.dto.FileDto;
 import com.crossyf.dubbo.first.dto.ItemDealDto;
-import com.crossyf.dubbo.first.dto.UploadFileDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
