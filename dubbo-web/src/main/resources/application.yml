@@ -38,3 +38,9 @@ jwt:
   secret: ojbkqOMwYE31y5aea8SkoVee3q
 # 默认过期30分钟，单位：秒
   expire-second: 1800
+
+minio:
+  endpoint: http://192.168.81.213:12000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: test

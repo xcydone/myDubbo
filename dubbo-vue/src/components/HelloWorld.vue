@@ -4,8 +4,21 @@
       <!--<img src="@/assets/logo.png">-->
       <h1>{{ msgInfo }}</h1>
       <!--<el-button type="text" @click="dialogVisible = true">新增</el-button>-->
-      <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
-      <el-button type="text" @click="open">点击打开 Message Box</el-button>
+      <!--<el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>-->
+      <el-upload
+        ref="upload"
+        :action="actionUrl"
+        :data="uploadData"
+        :file-list="fileList"
+        :before-upload="beforeAvatarUpload"
+        :on-success="handleSuccess"
+        :on-error="handleErrorFile"
+        :on-remove="handleRemove"
+        :before-remove="beforeRemove"
+        :limit="3"
+        :auto-upload="false">
+      </el-upload>
+      <el-button @click="submitData">提交</el-button>
     </div>
     <el-dialog
       title="提示"
@@ -68,10 +81,17 @@
           weekDaysTmp: {required: true, message: "请选择星期"}
         },
 
+        // 上传文件相关
+        actionUrl: '',
+        uploadData: {operId: 'caifang', operDate: 20200708},
+        fileList: [],
+
+
       }
     },
     mounted(){
       this.saySome();
+      this.actionUrl = "http://localhost:8092/order/uploadFile/";
     },
     methods: {
       saySome(){
@@ -87,19 +107,44 @@
           })
           .catch(_ => {});
       },
-      open() {
-        let it = this
-        /*this.$alert('这是一段内容', '标题名称', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${action}`
-            });
-          }
-        });*/
-        it.$message('这是一条消息提示');
 
+      // 检查上传的单个文件的大小
+      beforeAvatarUpload(file){
+        let isLt2M = file.size / 1024 / 1024 <= 30
+        if (!isLt2M) {
+          this.$message.error("上传的文件大小不能超过 30MB!");
+          /*this.loading = false;*/
+        }
+        return isLt2M;
+      },
+
+      // 上传成功
+      handleSuccess(response, file, fileList) {
+        console.log("response: ",response)
+        if (response.msg == "SUCCESS") {
+          /*this.loading = false;*/
+          this.$message({type: "success", message: "上传成功！"});
+        }
+      },
+
+      // 上传失败
+      handleErrorFile(err, file, fileList){
+        console.log(err)
+        this.$message({type: "error", message: "上传失败！"});
+      },
+
+      // 移除文件
+      handleRemove(file, fileList){
+        this.$message({type: "error", message: `${file.name}被移除`});
+      },
+
+      // 移除文件之前询问
+      beforeRemove(file, fileList){
+        return this.$confirm(`确定移除 ${ file.name }？`);
+      },
+
+      submitData(){
+        this.$refs.upload.submit();
       }
     }
   }

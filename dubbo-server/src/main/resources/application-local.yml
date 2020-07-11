@@ -52,3 +52,9 @@ jwt:
   expire-second: 1800
 
 isInterceptor: true
+
+minio:
+  endpoint: http://192.168.81.213:12000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: test
