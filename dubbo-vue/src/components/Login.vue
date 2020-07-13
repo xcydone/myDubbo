@@ -49,11 +49,9 @@
             verificationCode: this.loginForm.verificationCode,
             randnum: this.randnum
           }).then(resp => {
+            // debugger
             if (resp.data.code === 200) {
-              /*this.$store.commit('login', resp.data, this.loginForm.userId);
-              sessionStorage.setItem('state', JSON.stringify(this.$store.state))*/
               var path = this.$route.query.redirect
-              console.log("path:"+path)
               this.$router.push({path: path === '/' || path === undefined ? '/HelloWorld' : path})
             }
           })
@@ -65,6 +63,7 @@
       refreshCode () {
           this.api.onReady().then(resp => {
             if (resp.data.code === 200) {
+              this.$store.commit('login', resp.data, this.loginForm.userId);
               this.randnum = resp.data.data;
               this.vsCode = this.baseUrl + '/login/getCaptcha?randnum=' + this.randnum;
             }

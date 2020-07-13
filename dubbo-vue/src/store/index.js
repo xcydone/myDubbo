@@ -11,16 +11,12 @@ export default new Vuex.Store({
             operName:window.sessionStorage.getItem('oper') == null ? '' : JSON.parse(window.sessionStorage.getItem('oper')).operName,
             isNeedModifyPwd:window.sessionStorage.getItem('oper') == null ? false : JSON.parse(window.sessionStorage.getItem('oper')).isNeedModifyPwd,
         },
-        editableTabs:[],
-        editableTabsValue:'',
         userId:''
     },
     mutations: {
         login (state, oper, userId) {
             state.oper = oper
             state.userId = userId
-            state.editableTabs = []
-            state.editableTabsValue = ''
             window.sessionStorage.setItem('oper', JSON.stringify(oper))
         },
         refreshToken(state, token) {
@@ -32,15 +28,7 @@ export default new Vuex.Store({
             state.oper = []
             state.userId = ''
             state.token = ''
-            state.editableTabs = []
-            state.editableTabsValue = ''
             window.sessionStorage.clear();
-        },
-        updateEditTvalue (state,value) {
-            state.editableTabsValue = value
-        },
-        updateEditableTabs (state, value) {
-            state.editableTabs = value
         }
     }
 })

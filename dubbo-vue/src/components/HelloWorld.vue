@@ -1,7 +1,6 @@
 <template>
   <div style="height:100%;">
     <div>
-      <!--<img src="@/assets/logo.png">-->
       <h1>{{ msgInfo }}</h1>
       <!--<el-button type="text" @click="dialogVisible = true">新增</el-button>-->
       <!--<el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>-->
@@ -19,6 +18,24 @@
         :auto-upload="false">
       </el-upload>
       <el-button @click="submitData">提交</el-button>
+      <el-table
+        :data="tableData"
+        style="width: 100%">
+        <el-table-column
+          prop="date"
+          label="日期"
+          width="180">
+        </el-table-column>
+        <el-table-column
+          prop="name"
+          label="姓名"
+          width="180">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="地址">
+        </el-table-column>
+      </el-table>
     </div>
     <el-dialog
       title="提示"
@@ -85,11 +102,29 @@
         actionUrl: '',
         uploadData: {operId : 'caifang'},
         fileList: [],
-
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }]
 
       }
     },
     mounted(){
+      let hh = sessionStorage.getItem('state');
+      console.log("hh",hh)
       this.saySome();
       // configindex中已经设置了跳转url，这里直接配置周末的路径即可
       this.actionUrl = "order/uploadFile";

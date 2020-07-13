@@ -28,6 +28,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin
 public class LoginController {
     @Reference
     private IFirstApi firstApi;
@@ -79,7 +80,7 @@ public class LoginController {
             return Result.ok(loginRespDto);
 
         }else{
-            return Result.ok("验证码错误");
+            return Result.fail("验证码错误");
         }
     }
 

@@ -11,10 +11,9 @@ import router from '@/router'
 let instance = axios.create({
   baseURL: '/',
   withCredentials: false,
-  timeout: 20000,
+  timeout: 15000,
   headers: {
-    'Accept': '*',
-    'Content-Type': 'application/json;charset=UTF-8'
+    'Accept': '*'
   }
 })
 
@@ -22,7 +21,10 @@ let instance = axios.create({
 instance.interceptors.request.use(
   config =>{
     config.data = JSON.stringify(config.data);
-    config.headers['token'] = window.sessionStorage.getItem("token")
+    config.headers = {
+      "Content-Type": "application/json;charset=UTF-8",
+      token: window.sessionStorage.getItem("token"),
+    };
     return config
   },
   error => {
@@ -35,6 +37,8 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   response => {
     const headers = response.headers
+
+    console.log("response",response)
 
     // 情况一：上传文件拦截放开
     if (response.headers[`content-disposition`]!==undefined){
@@ -54,16 +58,13 @@ instance.interceptors.response.use(
 
     } else if (response.data.code === 1001) {
       // 情况四： 登录出去 清除token
+
       store.commit('logout');
-      let redirectPath = router.currentRoute.fullPath
-      if (redirectPath.indexOf('/login') >= 0) {
-        router.push({path: redirectPath}) // 防止Token过期后重复跳转
-      } else {
-        router.push({
-          path:"/login",
-          query:{redirect: redirectPath}//从哪个页面跳转
-        })
-      }
+
+      router.push({
+        path:"/"
+      })
+
       return Promise.reject(response)
     } else {
       // 以上三种情况都不是，不处理直接返回错误信息

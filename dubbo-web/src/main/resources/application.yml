@@ -38,6 +38,8 @@ swagger:
   version: 1.0.0
   enable: true
 
+isInterceptor: true
+
 # 加密secret
 jwt:
   secret: ojbkqOMwYE31y5aea8SkoVee3q

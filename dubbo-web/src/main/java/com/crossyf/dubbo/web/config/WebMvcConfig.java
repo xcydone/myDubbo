@@ -1,7 +1,8 @@
-package com.crossyf.dubbo.server.config;
+package com.crossyf.dubbo.web.config;
 
 import com.crossyf.dubbo.common.interceptor.GlobalInterceptor;
 import com.crossyf.dubbo.common.utils.JWTUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+@Slf4j
 public class WebMvcConfig implements WebMvcConfigurer {
     @Value("${isInterceptor}")
     public boolean isInterceptor;
@@ -22,14 +24,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration registration = registry.addInterceptor(new GlobalInterceptor(jwtUtil, isInterceptor));
         registration.addPathPatterns("/**");
+        log.info("执行开始啦");
         registration.excludePathPatterns(
                 "/login/*",            //登录
                 "/api/**",                 //外部接口服务
                 "/**/*.html",            //html静态资源
                 "/**/*.js",              //js静态资源
                 "/**/*.css",           //css静态资源
-                "/**/*.png", "/**/*.jpg", "/**/*.jpeg",     //图片资源
-                "/swagger-resources/**", "/webjars/**", "/swagger-ui.html/**" //swagger资源
+                "/**/*.png", "/**/*.jpg", "/**/*.jpeg"/*,     //图片资源
+                "/swagger-resources/**", "/webjars/**", "/swagger-ui.html/**" //swagger资源*/
                );
     }
 
