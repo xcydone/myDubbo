@@ -1,6 +1,7 @@
 package com.crossyf.dubbo.first.controller;
 
 import com.crossyf.dubbo.common.response.Result;
+import com.crossyf.dubbo.common.utils.HBaseUtil;
 import com.crossyf.dubbo.first.api.IFirstApi;
 import com.crossyf.dubbo.first.dto.PersonDto;
 import io.swagger.annotations.ApiOperation;

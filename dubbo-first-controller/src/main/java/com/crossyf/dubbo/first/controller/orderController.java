@@ -1,6 +1,7 @@
 package com.crossyf.dubbo.first.controller;
 
 import cn.hutool.core.util.IdUtil;
+import com.crossyf.dubbo.common.utils.HBaseUtil;
 import com.crossyf.dubbo.common.utils.MinioTemplate;
 import com.crossyf.dubbo.first.api.IOrderItemService;
 import com.crossyf.dubbo.first.dto.FileDto;
@@ -9,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
+import org.apache.hadoop.hbase.TableName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +29,9 @@ public class orderController {
     @Autowired(required = false)
     private MinioTemplate minioTemplate;
 
+    @Autowired
+    private HBaseUtil hBaseUtil;
+
     @ApiOperation(value = "工单环节处理")
     @PostMapping("/itemDeal")
     @ResponseBody
@@ -36,7 +41,6 @@ public class orderController {
 
     @ApiOperation(value = "上传文件接口")
     @PostMapping("/uploadFile")
-    @ResponseBody
     public void uploadFile(@RequestParam("file")MultipartFile file){
         String uuid = IdUtil.simpleUUID();
         try {
@@ -49,5 +53,19 @@ public class orderController {
         }catch (Exception e){
             log.info("上传文件失败");
         }
+    }
+
+    @ApiOperation(value = "查询hbase的表")
+    @GetMapping("/hbaseTableNames")
+    @ResponseBody
+    public TableName[] hbaseTableNames(){
+        try {
+            TableName[] tableNames = hBaseUtil.getAllTables();
+            return tableNames;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
