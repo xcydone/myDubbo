@@ -41,6 +41,7 @@ public class orderController {
 
     @ApiOperation(value = "上传文件接口")
     @PostMapping("/uploadFile")
+    @ResponseBody
     public void uploadFile(@RequestParam("file")MultipartFile file){
         String uuid = IdUtil.simpleUUID();
         try {
