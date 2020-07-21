@@ -29,6 +29,14 @@ public class HBaseUtil {
 
     @Value("${hbase.connectValue}")
     private String connectValue;
+
+    @Value("${hbase.nameSpace}")
+    private String nameSpace;
+
+    @Value("${hbase.defaultPath}")
+    private String defaultPath;
+
+    private Configuration conf;
     private Connection conn;
     private Admin admin;
 
@@ -45,11 +53,16 @@ public class HBaseUtil {
         Configuration conf = HBaseConfiguration.create();
 
         // 设置当前的程序去寻找的hbase在哪里
-        conf.set(connectKey, connectValue);
+        /*conf.set(nameSpace, defaultPath);
+        conf.set(connectKey, connectValue);*/
+        conf.set("fs.defaultFS", "hdfs://myha01/hbase224");
+        conf.set("hbase.zookeeper.quorum", "xcydtwo:2181,xcydthree:2181,xcydfour:2181,xcydfive:2181");
+        /*conf.set("hbase.zookeeper.property.clientPort", "21810");*/
         try {
             conn = ConnectionFactory.createConnection(conf);
             admin = conn.getAdmin();
             log.info("HBase启动");
+            log.info("HBase启动conf:"+conf);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -70,24 +83,7 @@ public class HBaseUtil {
         if(admin.tableExists(name)) {
             System.out.println("table已经存在！");
         }else{
-            Collection<ColumnFamilyDescriptor> collections = new ArrayList<>();
-            for(String str : family){
-                ColumnFamilyDescriptor columnFamilyDescriptor = ColumnFamilyDescriptorBuilder.newBuilder(str.getBytes())
-                        .setCompressTags(true)
-                        .setInMemoryCompaction(MemoryCompactionPolicy.ADAPTIVE)
-                        .setMaxVersions(6)
-                        .setMinVersions(2)
-                        .setTimeToLive(60 * 60 * 24 * 7)
-                        .setValue("COMPRESSION","SNAPPY")
-                        .setValue("hbase.hstore.engine.class","org.apache.hadoop.hbase.regionserver.DateTieredStoreEngine")
-                        .setValue("hbase.hstore.blockingStoreFiles","60")
-                        .setValue("hbase.hstore.compaction.min","2")
-                        .setValue("hbase.hstore.compaction.max","60")
-                        .setCompactionCompressionType(Compression.Algorithm.SNAPPY)
-                        .build();
-
-                collections.add(columnFamilyDescriptor);
-            }
+            Collection<ColumnFamilyDescriptor> collections = createFamily(family);
 
             TableDescriptor td = TableDescriptorBuilder
                     .newBuilder(name)
@@ -110,6 +106,35 @@ public class HBaseUtil {
                 System.out.println("table创建失败");
             }
         }
+    }
+
+    /**
+    * @Description:  创建列族
+    * @Param: [family]
+    * @return: java.util.Collection<org.apache.hadoop.hbase.client.ColumnFamilyDescriptor>
+    * @Author: caifang
+    * @Date: 2020/7/18
+    */
+    public Collection<ColumnFamilyDescriptor> createFamily(String[] family){
+        Collection<ColumnFamilyDescriptor> collections = new ArrayList<>();
+        for(String str : family){
+            ColumnFamilyDescriptor columnFamilyDescriptor = ColumnFamilyDescriptorBuilder.newBuilder(str.getBytes())
+                    .setCompressTags(true)
+                    .setInMemoryCompaction(MemoryCompactionPolicy.ADAPTIVE)
+                    .setMaxVersions(6)
+                    .setMinVersions(2)
+                    .setTimeToLive(60 * 60 * 24 * 7)
+                    .setValue("COMPRESSION","SNAPPY")
+                    .setValue("hbase.hstore.engine.class","org.apache.hadoop.hbase.regionserver.DateTieredStoreEngine")
+                    .setValue("hbase.hstore.blockingStoreFiles","60")
+                    .setValue("hbase.hstore.compaction.min","2")
+                    .setValue("hbase.hstore.compaction.max","60")
+                    .setCompactionCompressionType(Compression.Algorithm.SNAPPY)
+                    .build();
+
+            collections.add(columnFamilyDescriptor);
+        }
+        return collections;
     }
 
     /**
@@ -459,6 +484,14 @@ public class HBaseUtil {
 
     public void setConnectValue(String connectValue) {
         this.connectValue = connectValue;
+    }
+
+    public Configuration getConf() {
+        return conf;
+    }
+
+    public void setConf(Configuration conf) {
+        this.conf = conf;
     }
 
     public Connection getConn() {

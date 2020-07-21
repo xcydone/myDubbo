@@ -55,3 +55,5 @@ minio:
 hbase:
   connectKey: hbase.zookeeper.quorum
   connectValue: xcydtwo:2181,xcydthree:2181,xcydfour:2181,xcydfive:2181
+  nameSpace: fs.defaultFS
+  defaultPath: hdfs://myha01/hbase224

@@ -1,6 +1,7 @@
 package com.crossyf.dubbo.first.controller;
 
 import cn.hutool.core.util.IdUtil;
+import com.crossyf.dubbo.common.hbase.ReadHDFSDataToHbaseMR;
 import com.crossyf.dubbo.common.utils.HBaseUtil;
 import com.crossyf.dubbo.common.utils.MinioTemplate;
 import com.crossyf.dubbo.first.api.IOrderItemService;
@@ -10,13 +11,14 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.TableName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.apache.hadoop.util.ToolRunner;
 
-import javax.validation.constraints.NotNull;
 
 @Api(tags = "工单管理-工单环节实例", value = "/order/itemDeal")
 @Controller
@@ -68,5 +70,29 @@ public class orderController {
         }
 
         return null;
+    }
+
+    @ApiOperation(value = "创建hbase的表")
+    @GetMapping("/createTable")
+    @ResponseBody
+    public void createTable(String tableNameStr, String[] familys){
+        try {
+            hBaseUtil.createTable(tableNameStr, familys);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @ApiOperation(value = "读取hdfs上的txt到hbase的表")
+    @GetMapping("/readHDFSDataToHbase")
+    @ResponseBody
+    public void readHDFSDataToHbase(String[] args){
+        try {
+            Configuration conf = hBaseUtil.getConf();
+            int status = ToolRunner.run(conf, new ReadHDFSDataToHbaseMR(), args);
+            System.exit(status);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
