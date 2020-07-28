@@ -1,0 +1,243 @@
+/* 表单
+-------------------------- */
+.el-form-item {
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+.el-form-item__label {
+  font-size: 12px;
+  color: #090d13;
+  line-height: 32px;
+}
+.el-form-item__content {
+  line-height: 32px;
+}
+.el-input {
+  font-size: 12px;
+  .el-input__inner {
+    height: 32px;
+    line-height: 32px;
+    color: #090d13;
+  }
+}
+.el-textarea {
+  font-size: 12px;
+  .el-textarea__inner {
+    border-radius: 3px;
+    color: #090d13;
+    font-family: "微软雅黑";
+  }
+}
+.el-input__icon {
+  line-height: 32px;
+}
+.el-date-editor {
+  height: 32px;
+  line-height: 32px;
+  .el-range-input,
+  .el-range-separator {
+    font-size: 12px;
+  }
+  .el-input__icon,
+  .el-range-separator,
+  .el-range-input {
+    height: 32px;
+    background: transparent;
+  }
+}
+.wlw-input-trigger {
+  .el-form-item__content {
+    overflow: hidden;
+  }
+  .el-input-group__append {
+    width: 32px;
+    text-align: center;
+    padding: 0;
+    background-color: #0684ff;
+    color: #fff;
+    cursor: pointer;
+    pointer-events: auto;
+    .el-button {
+      padding: 0;
+    }
+  }
+}
+
+.wlw--form-danwei {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.wlw--form-flex {
+  .el-form-item {
+    display: inline-flex !important;
+    .el-form-item__content {
+      flex-grow: 1;
+      padding-right: 15px;
+    }
+  }
+}
+
+/* 按钮
+-------------------------- */
+.el-button {
+  font-size: 12px;
+  padding: 0 14px;
+  height: 32px;
+  line-height: 30px;
+  border-radius: 3px;
+
+  &.el-button--primary {
+    background-color: $--color-primary;
+    border-color: $--color-primary;
+    &.is-plain {
+      background-color: #fff;
+      color: $--color-primary;
+      &:hover {
+        color: $--color-primary;
+      }
+    }
+  }
+
+  &.wlw--btn-gray {
+    background-color: #e5e7ef;
+    border-color: #e5e7ef;
+    color: #161d33;
+  }
+}
+
+.wlw--formBtn {
+  border: none;
+  background: transparent !important;
+  font-size: 15px;
+  &.wlw--formBtn-gray {
+    color: #a3aac0;
+  }
+  &.wlw--formBtn-red {
+    color: $--color-red;
+    &:hover {
+      color: $--color-red;
+      opacity: 0.8;
+    }
+  }
+  &:hover {
+    color: $--color-primary;
+  }
+}
+
+/* 单选按钮
+-------------------------- */
+.el-radio {
+  .el-radio__label {
+    font-size: 12px;
+  }
+  .el-radio__inner {
+    width: 14px;
+    height: 14px;
+    border: solid 1px #c7d2df;
+    background-color: #fff;
+    &:after {
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .el-radio__input.is-checked {
+    .el-radio__inner {
+      background-color: #fff;
+      border-color: #c7d2df;
+      &:after {
+        background-color: $--color-primary;
+      }
+    }
+  }
+  &.is-bordered {
+    text-align: center;
+    .el-radio__input {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+    .el-radio__label {
+      padding-left: 0;
+    }
+  }
+}
+
+/* 选择器
+-------------------------- */
+.el-select-dropdown__item {
+  font-size: 12px;
+  height: 32px;
+  line-height: 32px;
+}
+
+/* 复选
+-------------------------- */
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: $--color-primary;
+  border-color: $--color-primary;
+}
+.el-checkbox__label {
+  font-size: 12px;
+}
+.el-checkbox__inner {
+  width: 12px;
+  height: 12px;
+  &:after {
+    left: 3px;
+    top: 0;
+  }
+}
+.wlw--checkList-newline {
+  .el-checkbox {
+    display: block;
+    margin-bottom: 17px;
+  }
+}
+
+.el-dropdown-menu {
+  padding: 5px 0;
+  .el-dropdown-menu__item {
+    font-size: 12px;
+    line-height: 32px;
+  }
+}
+
+/* 上传
+-------------------------- */
+.el-upload {
+  .el-upload-dragger {
+    width: 357px;
+    height: 207px;
+    background-color: rgba(230, 242, 255, 0.3);
+    border-radius: 5px;
+    border: dashed 1px #0684ff;
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    padding-top: 44px;
+    padding-bottom: 48px;
+    .el-icon-upload {
+      margin: 0 0 36px;
+      color: #0684ff;
+    }
+    .el-upload__text {
+      font-size: 14px;
+      color: #a3aac0;
+    }
+  }
+}
+.el-upload-list {
+  width: 357px;
+  .el-upload-list__item-name {
+    font-size: 12px;
+    color: #44474c;
+  }
+}
+.wlw--card-uploadTips {
+  color: #a3aac0;
+  font-size: 12px;
+  margin-bottom: 10px;
+}

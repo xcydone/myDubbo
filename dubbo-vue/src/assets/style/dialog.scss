@@ -1,0 +1,34 @@
+.el-dialog {
+  .el-dialog__header {
+    border-bottom: 1px solid #dde2e7;
+    padding: 20px 28px;
+    .el-dialog__title {
+      line-height: 1;
+      font-size: 14px;
+      color: $--color-text-primary;
+    }
+  }
+  .el-dialog__footer {
+    border-top: 1px solid #dde2e7;
+    padding: 12px 18px;
+    .el-button.el-button--default {
+      background-color: #e5e7ef;
+      border-color: #e5e7ef;
+      color: $--color-text-primary;
+    }
+  }
+  .el-dialog__body {
+    padding: 14px 18px;
+    font-size: 12px;
+  }
+}
+
+.el-message-box {
+  .el-message-box__message {
+    color: $--color-text-primary;
+  }
+  .el-button.el-button--primary {
+    background-color: $--color-primary;
+    border-color: $--color-primary;
+  }
+}

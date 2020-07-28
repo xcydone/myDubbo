@@ -1,0 +1,26 @@
+.wlw-table {
+  font-size: 12px;
+  color: #090d13;
+  td, th {
+    padding: 7px 0;
+  }
+
+  .el-table__header-wrapper {
+    thead {
+      color: #44474c;
+      tr, th {
+        background-color: #fafafd;
+      }
+      .cell {
+        font-weight: normal;
+      }
+    }
+  }
+
+  .el-link {
+    font-size: 12px;
+    &.el-link--primary {
+      color: $--color-primary;
+    }
+  }
+}

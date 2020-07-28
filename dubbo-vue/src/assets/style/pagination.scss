@@ -1,0 +1,17 @@
+
+.el-pagination {
+  text-align: right;
+}
+.el-pagination button, .el-pagination span:not([class*=suffix]) {
+  font-size: 12px;
+}
+.el-pagination__total {
+  color: #18212d;
+}
+.el-pager li {
+  font-weight: normal;
+  color: #18212d;
+  &.active {
+    color: $--color-primary;
+  }
+}
