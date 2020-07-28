@@ -250,8 +250,6 @@
         }*/
 
         let haMap3 = null;
-        haMap3.name
-
       }
     }
   }
