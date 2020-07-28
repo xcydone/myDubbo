@@ -1,0 +1,27 @@
+/* 颜色
+-------------------------- */
+$--color-white: #fff !default;
+$--color-black: #ebf2ff !default;
+$--color-primary: #0684ff !default;
+$--color-gray: #CECDCD !default;
+$--color-green: #1AE34D !default;
+$--color-yellow: #FFD860 !default;
+$--color-red: #FF6060 !default;
+
+$--color-text-primary: #090d13 !default;
+$--color-text-blue: #0684ff !default;
+$--color-text-gray: #44474c !default;
+
+/* Background
+-------------------------- */
+$--background-color-base: #EBEDF4 !default;
+
+/* 字体
+-------------------------- */
+.wlw--text-color-blue {
+  color: $--color-text-blue !important;
+}
+
+.wlw--text-color-gray {
+  color: $--color-text-gray !important;
+}

@@ -50,18 +50,19 @@ public class HBaseUtil {
     @PostConstruct
     public void getConnection() {
         // 创建一个可以用来管理hbase配置信息的conf对象
-        Configuration conf = HBaseConfiguration.create();
+        conf = HBaseConfiguration.create();
 
         // 设置当前的程序去寻找的hbase在哪里
         /*conf.set(nameSpace, defaultPath);
         conf.set(connectKey, connectValue);*/
+
         conf.set("fs.defaultFS", "hdfs://myha01/hbase224");
         conf.set("hbase.zookeeper.quorum", "xcydtwo:2181,xcydthree:2181,xcydfour:2181,xcydfive:2181");
+
         /*conf.set("hbase.zookeeper.property.clientPort", "21810");*/
         try {
             conn = ConnectionFactory.createConnection(conf);
             admin = conn.getAdmin();
-            log.info("HBase启动");
             log.info("HBase启动conf:"+conf);
         } catch (IOException e) {
             e.printStackTrace();

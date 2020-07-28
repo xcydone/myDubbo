@@ -32,13 +32,13 @@ public class ReadHDFSDataToHbaseMR extends Configured implements Tool{
         job.setMapOutputValueClass(NullWritable.class);
 
         //设置Reducer
-        TableMapReduceUtil.initTableReducerJob("student", HDFSToHbaseReducer.class, job,null,null,null,null,false);
+        TableMapReduceUtil.initTableReducerJob("myStudent", HDFSToHbaseReducer.class, job,null,null,null,null,false);
 
         job.setOutputKeyClass(NullWritable.class);
         job.setOutputValueClass(Put.class);
 
-        Path inputPath = new Path("/student/input/");
-        Path outputPath = new Path("/student/output/");
+        Path inputPath = new Path("file:///student/input/");
+        Path outputPath = new Path("file:///student/output/");
 
         if(fs.exists(outputPath)) {
             fs.delete(outputPath,true);

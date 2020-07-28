@@ -89,6 +89,7 @@ public class orderController {
     public void readHDFSDataToHbase(String[] args){
         try {
             Configuration conf = hBaseUtil.getConf();
+            log.info("HBase获得conf:"+conf);
             int status = ToolRunner.run(conf, new ReadHDFSDataToHbaseMR(), args);
             System.exit(status);
         }catch (Exception e){

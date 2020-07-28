@@ -1,0 +1,25 @@
+.el-tree {
+  color: $--color-text-primary;
+  .el-tree-node__label {
+    font-size: 12px;
+  }
+  .el-checkbox__inner {
+    width: 12px;
+    height: 12px;
+    &:after {
+      left: 3px !important;
+      top: -0.1px !important;
+    }
+    &:before {
+      left: -0.1px !important;
+      top: 3.5px !important;
+    }
+  }
+  .el-checkbox {
+    font-size: 12px;
+  }
+  .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: $--color-primary;
+    border-color: $--color-primary;
+  }
+}

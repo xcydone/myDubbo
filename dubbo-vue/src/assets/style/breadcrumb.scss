@@ -1,0 +1,37 @@
+.wlw-breadcrumb {
+  line-height: 40px;
+  height: 40px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .wlw-breadcrumb-left {
+    color: #161d33;
+    font-size: 14px;
+    i {
+    font-family: 'iconfont'; 
+    content: '\ec3d';
+    font-size: 17px;
+    vertical-align: -1px;
+    margin-right: 10px;
+    }
+    .icon-weizhi- {
+      color: #b2b8ca;
+    }
+    .icon-fanhui- {
+      color: $--color-primary;
+      cursor: pointer;
+    }
+  }
+  .wlw-breadcrumb-right {
+    font-size: 12px;
+    .el-breadcrumb {
+      font-size: 12px;
+      .el-breadcrumb__inner {
+        a {
+          color: #666a79;
+        }
+      }
+    }
+  }
+}
