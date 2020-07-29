@@ -51,5 +51,13 @@ export default new Router({
     {
       path: '/test/testRender',
       component: () => import('@/pages/test/testRender'),
+    },
+    {
+      path: '/test/testColor',
+      component: () => import('@/pages/test/testColor/testColorChange'),
+    },
+    {
+      path: '/test/testRowMerge',
+      component: () => import('@/pages/test/testRowMerge/table'),
     }]
 })
