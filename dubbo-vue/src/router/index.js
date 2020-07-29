@@ -37,16 +37,20 @@ export default new Router({
         component: () => import('@/pages/systable/dict/dictList'),
         meta: {title: '字典管理'}
       },
-        {
-          path: 'dictDetail',
-          name: 'dictDetail',
-          component: () => import('@/pages/systable/dict/dictDetail'),
-          meta: {title: '字典详情'}
-        }]
+      {
+        path: 'dictDetail',
+        name: 'dictDetail',
+        component: () => import('@/pages/systable/dict/dictDetail'),
+        meta: {title: '字典详情'}
+      }]
     },
     {
       path: '/test/tableTitle',
-      component: () => import('@/pages/test/tableTitle'),
+      component: () => import('@/pages/test/testTitle/tableTitle'),
+    },
+    {
+      path: '/test/tableTitle2',
+      component: () => import('@/pages/test/testTitle/sheet'),
     },
     {
       path: '/test/testRender',
