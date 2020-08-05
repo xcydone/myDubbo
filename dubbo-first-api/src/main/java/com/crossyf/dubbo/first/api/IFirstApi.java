@@ -8,4 +8,6 @@ public interface IFirstApi {
     String sayFirst(String name);
 
     List<PersonDto> findOne(String id, String userName);
+
+    PersonDto findPersonById(String id);
 }

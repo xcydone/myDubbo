@@ -2,14 +2,16 @@ package com.crossyf.dubbo.first.controller;
 
 import com.crossyf.dubbo.first.api.IEventService;
 import com.crossyf.dubbo.first.event.RuleEvent;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(tags = "event-Controller", value = "/first")
 @RestController
-@RequestMapping("/event")
+@RequestMapping("/first/event")
 @Slf4j
 public class eventController {
 

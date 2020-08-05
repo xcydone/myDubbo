@@ -3,22 +3,23 @@
 <mapper namespace="com.crossyf.dubbo.first.mapper.PersonMapper">
     <resultMap type="com.crossyf.dubbo.first.entity.Person" id="person">
         <result column="id" jdbcType="VARCHAR" property="id"/>
-        <result column="create_datetime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
         <result column="phone" jdbcType="VARCHAR" property="phone"/>
         <result column="sex" jdbcType="VARCHAR" property="sex"/>
-        <result column="username" jdbcType="VARCHAR" property="userName"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="zone" jdbcType="BLOB" property="zone"/>
         <result column="classes" jdbcType="VARCHAR" property="classes"/>
-        <result column="level" jdbcType="BLOB" property="level"/>
+        <result column="level" jdbcType="VARCHAR" property="level"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
         <result column="mother" jdbcType="VARCHAR" property="mother"/>
+        <result column="father" jdbcType="VARCHAR" property="father"/>
         <result column="company_code" jdbcType="VARCHAR" property="companyCode"/>
-        <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
     </resultMap>
 
     <sql id="personColnum">
         pn.id,pn.create_datetime,pn.email,pn.phone,pn.sex,pn.username,
-        pn.zone,pn.classes,pn.level,pn.mother,pn.company_code
+        pn.zone,pn.classes,pn.level,pn.mother,pn.father,pn.company_code
     </sql>
 
     <select id="findOne" resultMap="person">

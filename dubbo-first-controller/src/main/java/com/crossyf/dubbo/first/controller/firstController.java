@@ -4,6 +4,7 @@ import com.crossyf.dubbo.common.response.Result;
 import com.crossyf.dubbo.common.utils.HBaseUtil;
 import com.crossyf.dubbo.first.api.IFirstApi;
 import com.crossyf.dubbo.first.dto.PersonDto;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
@@ -11,8 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api(tags = "first-Controller", value = "/first")
 @RestController
-@RequestMapping("/first")
+@RequestMapping("/first/test")
 @Slf4j
 public class firstController {
     @Reference
@@ -27,7 +29,14 @@ public class firstController {
     @ApiOperation(value = "通过id和name查询一个人", notes = "查询一个人")
     @GetMapping(value = "/findOne")
     public List<PersonDto> findOne(@RequestParam(value = "id") String id, @RequestParam(value = "username") String username){
-        log.info("查询一个人的角色信息");
         return firstApi.findOne(id, username);
     }
+
+    @ApiOperation(value = "通过id查询一个人", notes = "查询一个人")
+    @GetMapping(value = "/findPersonById")
+    public PersonDto findPersonById(@RequestParam(value = "id") String id){
+        return firstApi.findPersonById(id);
+    }
+
+
 }

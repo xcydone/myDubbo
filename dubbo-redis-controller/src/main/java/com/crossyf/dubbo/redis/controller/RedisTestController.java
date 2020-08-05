@@ -5,6 +5,7 @@ import com.crossyf.dubbo.common.constant.StateParameter;
 import com.crossyf.dubbo.common.controller.BaseController;
 import com.crossyf.dubbo.redis.api.IRedisService;
 import com.crossyf.dubbo.redis.dto.User;
+import io.swagger.annotations.Api;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Api(tags = "redis-Controller", value = "/redis")
 @RestController
-@RequestMapping("/redis")
+@RequestMapping("/redis/test")
 public class RedisTestController extends BaseController {
 
     @Reference

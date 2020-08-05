@@ -32,4 +32,12 @@ public class IFirstApiImpl implements IFirstApi {
         }
         return resultList;
     }
+
+    @Override
+    public PersonDto findPersonById(String id) {
+        Person pn = personMapper.selectById(id);
+        PersonDto dto = new PersonDto();
+        BeanUtils.copyProperties(pn, dto);
+        return dto;
+    }
 }

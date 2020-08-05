@@ -20,9 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.apache.hadoop.util.ToolRunner;
 
 
-@Api(tags = "工单管理-工单环节实例", value = "/order/itemDeal")
+@Api(tags = "工单管理-工单环节实例", value = "/first")
 @Controller
-@RequestMapping("/order")
+@RequestMapping("/first/order")
 @Slf4j
 public class orderController {
     @Reference
