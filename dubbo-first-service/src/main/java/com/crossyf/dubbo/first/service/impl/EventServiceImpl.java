@@ -1,8 +1,8 @@
-package com.crossyf.dubbo.second.service.impl;
+package com.crossyf.dubbo.first.service.impl;
 
 import com.crossyf.dubbo.common.zookeeper.event.Event;
 import com.crossyf.dubbo.common.zookeeper.manager.EventManager;
-import com.crossyf.dubbo.second.api.IEventService;
+import com.crossyf.dubbo.first.api.IEventService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -63,5 +63,9 @@ export default new Router({
     {
       path: '/test/testRowMerge',
       component: () => import('@/pages/test/testRowMerge/table'),
+    },
+    {
+      path: '/test/testClock',
+      component: () => import('@/pages/test/testClock/clock'),
     }]
 })

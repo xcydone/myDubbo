@@ -3,7 +3,7 @@ package com.crossyf.dubbo.server.config;
 import com.crossyf.dubbo.common.zookeeper.event.EventListener;
 import com.crossyf.dubbo.common.zookeeper.manager.EventManager;
 import com.crossyf.dubbo.common.zookeeper.manager.ZookeeperManager;
-import com.crossyf.dubbo.second.event.RuleEvent;
+import com.crossyf.dubbo.first.event.RuleEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;

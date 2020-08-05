@@ -17,7 +17,9 @@
     "element-ui": "^2.11.1",
     "moment": "^2.24.0",
     "vue": "^2.5.2",
+    "vue-clock2": "^1.1.5",
     "vue-gemini-scrollbar": "^2.0.1",
+    "vue-pomodoro": "^1.0.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.2"
   },
