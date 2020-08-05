@@ -10,4 +10,6 @@ import java.util.List;
 @Mapper
 public interface PersonMapper extends BaseMapper<Person> {
     List<Person> findOne(@Param("id") String id, @Param("username") String username);
+
+    void insertBatchPerson(@Param("list")List<Person> persons);
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @ApiModel
 @Data
@@ -16,7 +17,7 @@ public class Person implements Serializable {
     private String id;
 
     @ApiModelProperty(value = "创建时间")
-    private String createTime;
+    private LocalDate createTime;
 
     @ApiModelProperty(value = "邮箱")
     private String email;
@@ -29,9 +30,6 @@ public class Person implements Serializable {
 
     @ApiModelProperty(value = "用户名")
     private String userName;
-
-    @ApiModelProperty(value = "地区")
-    private String zone;
 
     @ApiModelProperty(value = "班级")
     private String classes;

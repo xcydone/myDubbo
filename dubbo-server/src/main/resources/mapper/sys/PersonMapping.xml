@@ -27,4 +27,37 @@
         FROM person pn WHERE pn.id = #{id,jdbcType=VARCHAR} and pn.username = #{username,jdbcType=VARCHAR}
     </select>
 
+    <insert id="insertBatchPerson">
+        insert into person(
+            id,
+            create_time,
+            email,
+            phone,
+            sex,
+            user_name,
+            classes,
+            level,
+            status,
+            mother,
+            father,
+            company_code)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.id,jdbcType=VARCHAR},
+            #{item.createTime,jdbcType=TIMESTAMP},
+            #{item.email,jdbcType=VARCHAR},
+            #{item.phone,jdbcType=VARCHAR},
+            #{item.sex,jdbcType=VARCHAR},
+            #{item.userName,jdbcType=VARCHAR},
+            #{item.classes,jdbcType=VARCHAR},
+            #{item.level,jdbcType=VARCHAR},
+            #{item.status,jdbcType=VARCHAR},
+            #{item.mother,jdbcType=VARCHAR},
+            #{item.father,jdbcType=VARCHAR},
+            #{item.companyCode,jdbcType=VARCHAR},
+            )
+        </foreach>
+    </insert>
+
 </mapper>
