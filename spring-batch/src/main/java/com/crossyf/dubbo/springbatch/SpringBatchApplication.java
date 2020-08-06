@@ -17,7 +17,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import java.io.IOException;
 import java.util.Date;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication(scanBasePackages = "com.crossyf.dubbo.*")
 public class SpringBatchApplication {
 
     public static void main(String[] args)
@@ -57,14 +57,14 @@ public class SpringBatchApplication {
             JobParameters jobParameters = new JobParametersBuilder()
                     .addDate("date", new Date())
                     .toJobParameters();
-            jobLauncher.run(ctx.getBean("helloWorldJob", Job.class), jobParameters);
+            jobLauncher.run(ctx.getBean("jobOne", Job.class), jobParameters);
             //jobOne名称必须和JobOneConfiguration中配置的@bean Job 的方法名一致，后面jobTwo也是一样。
         }
         if (twoJob) {
             JobParameters jobParameters = new JobParametersBuilder()
                     .addDate("date", new Date())
                     .toJobParameters();
-            jobLauncher.run(ctx.getBean("helloWorldJob2", Job.class), jobParameters);
+            jobLauncher.run(ctx.getBean("jobTwo", Job.class), jobParameters);
         }
 
         System.exit(0);

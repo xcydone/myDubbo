@@ -3,11 +3,11 @@ package com.crossyf.dubbo.springbatch.dto;
 import lombok.Data;
 
 @Data
-public class Student {
+public class StudentDto {
     private String firstName;
     private String lastName;
 
-    public Student() {
+    public StudentDto() {
     }
 
     @Override

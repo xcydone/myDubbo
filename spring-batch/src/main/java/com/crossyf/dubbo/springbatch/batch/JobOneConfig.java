@@ -1,6 +1,7 @@
 package com.crossyf.dubbo.springbatch.batch;
 
-import com.crossyf.dubbo.springbatch.dto.Student;
+import com.crossyf.dubbo.springbatch.service.IStudentService;
+import com.crossyf.dubbo.springbatch.dto.StudentDto;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -11,62 +12,75 @@ import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
 import org.springframework.batch.item.file.transform.PassThroughLineAggregator;
+import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 
+import java.util.List;
+
 @Configuration
 @EnableBatchProcessing
-public class HelloWorldJobConfig {
+public class JobOneConfig {
     @Autowired
     private JobBuilderFactory jobBuilders;
 
     @Autowired
     private StepBuilderFactory stepBuilders;
 
+    @Autowired
+    private PublicStudentHolder studentHolder;
+
+    @Autowired
+    private IStudentService studentService;
+
     @Bean
-    public Job helloWorldJob() {
+    public Job jobOne() {
         // 创建job
-        return jobBuilders.get("helloWorldJob")
-                .start(helloWorldStep())
+        return jobBuilders.get("jobOne")
+                .start(jobOneStepOne())
                 /*.next(nihaoStep(stepBuilders))*/
                 .build();
     }
 
     @Bean
-    public Step helloWorldStep() {
+    public Step jobOneStepOne() {
         // 创建step1
-        return stepBuilders.get("helloWorldStep")
-                .<Student, String>chunk(10)
-                .reader(reader())
-                .processor(processor())
-                .writer(writer())
+        return stepBuilders.get("JobOneStepOne")
+                .<StudentDto, String>chunk(10)
+                .reader(jobOneStepOneReader())
+                .processor(jobOneStepOneProcessor())
+                .writer(jobOneStepOneWriter())
                 .build();
     }
 
     @Bean
-    public FlatFileItemReader<Student> reader() {
+    public FlatFileItemReader<StudentDto> jobOneStepOneReader() {
         // 读取数据以student类存放
-        return new FlatFileItemReaderBuilder<Student>()
+        return new FlatFileItemReaderBuilder<StudentDto>()
                 .name("studentItemReader")
                 .resource(new ClassPathResource("csv/student.csv"))
                 .delimited().names(new String[] {"firstName", "lastName"})
-                .targetType(Student.class).build();
+                .targetType(StudentDto.class).build();
     }
 
     @Bean
-    public StudentItemProcessor processor() {
+    public JobOneStepOneProcessor jobOneStepOneProcessor() {
         // 处理每行数据
-        return new StudentItemProcessor();
+        return new JobOneStepOneProcessor();
     }
 
     @Bean
-    public FlatFileItemWriter<String> writer() {
+    public FlatFileItemWriter<String> jobOneStepOneWriter() {
+        /*// 写入数据库
+        List<StudentDto> studentDtoList = studentHolder.getPublicStudentList();
+        studentService.insertBatch(studentDtoList);*/
+
         // 写入文件
         return new FlatFileItemWriterBuilder<String>()
-                .name("greetingItemWriter")
+                .name("jobOneStepOneWriter")
                 .resource(new FileSystemResource("target/test-outputs/greetings.txt"))
                 .lineAggregator(new PassThroughLineAggregator<>()).build();
     }

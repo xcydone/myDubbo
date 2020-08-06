@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Configuration;
 @EnableBatchProcessing(modular=true)
 public class JobConfiguration {
     @Bean
-    public ApplicationContextFactory HelloWorldJob(){
-        return new GenericApplicationContextFactory(HelloWorldJobConfig.class);
+    public ApplicationContextFactory jobOne(){
+        return new GenericApplicationContextFactory(JobOneConfig.class);
     }
 
     @Bean
-    public ApplicationContextFactory HelloWorldJob2(){
-        return new GenericApplicationContextFactory(HelloWorldJob2Config.class);
+    public ApplicationContextFactory jobTwo(){
+        return new GenericApplicationContextFactory(JobTwoConfig.class);
     }
 }

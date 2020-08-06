@@ -1,16 +1,16 @@
 package com.crossyf.dubbo.springbatch.batch;
 
-import com.crossyf.dubbo.springbatch.dto.Student;
+import com.crossyf.dubbo.springbatch.dto.StudentDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
-public class StudentItemProcessor2 implements ItemProcessor<Student, String> {
+public class JobTwoStepOneProcessor implements ItemProcessor<StudentDto, String> {
     // 快速创建日志实例
-    private static final Logger LOGGER = LoggerFactory.getLogger(StudentItemProcessor2.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JobTwoStepOneProcessor.class);
 
     @Override
-    public String process(Student student) throws Exception {
+    public String process(StudentDto student) throws Exception {
         String greeting = "nihao " + student.getFirstName() + " "
                 + student.getLastName() + "!";
 
