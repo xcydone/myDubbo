@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/xcydone?useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true&characterEncoding=utf8
+    username: root
+    password: 345678
+
+logging:
+  config: classpath:logback-spring.xml
+
+log:
+  level: debug
+  path: ./logs
+
+sftp:
+  ip: 132.126.3.46
+  port: 23
+  username: test
+  password: 12345678
+  ttss:
+    tempfilepath: F:\downLoadFile2\
+    sourcefilepath: /ttss
+    prefix: BILL_INTER_TAXBAL_${latn_id}-${yyyymm}\d{2}-\d+.txt
+    isSingleFile: 1
+
+ftp:
+  ip: 132.126.3.46
+  port: 21
+  username: test
+  password: 12345678
+  ttss:
+    tempfilepath: F:\downLoadFile2\
+    sourcefilepath: /ttss
+    prefix: BILL_INTER_TAXBAL_${latn_id}-${yyyymm}\d{2}-\d+.txt
+    isSingleFile: 1

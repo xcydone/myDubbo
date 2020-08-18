@@ -67,5 +67,9 @@ export default new Router({
     {
       path: '/test/testClock',
       component: () => import('@/pages/test/testClock/clock'),
+    },
+    {
+      path: '/test/testSummery',
+      component: () => import('@/pages/test/testSummery/summ'),
     }]
 })

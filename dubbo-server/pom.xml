@@ -7,7 +7,7 @@
         <artifactId>dubbo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.crossyf.dubbo.server</groupId>
+    <groupId>com.crossyf.dubbo</groupId>
     <artifactId>dubbo-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>dubbo-server</name>

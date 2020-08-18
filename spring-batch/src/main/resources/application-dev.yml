@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://10.128.10.40:3306/batch_test?useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true&characterEncoding=utf8
+    username: gw
+    password: gw123!@#
+
+logging:
+  config: logback-spring.xml
+
+log:
+  level: info
+  path: ./logs
+
+sftp:
+  ip: 10.128.117.55
+  port: 5151
+  username: ofcs2
+  password: jsapp@12
+  ttss:
+    tempfilepath: /OFCS2/hadoop/data/sftptemp/ttss/
+    sourcefilepath: /OFCS2/hadoop/data/input_data/ycjh/
+
+ftp:
+  ip: 132.126.3.46
+  port: 21
+  username: test
+  password: 12345678
+  ttss:
+    tempfilepath: D:\fdtSource2\
+    sourcefilepath: /
+    prefix: JT_BSS_ADJ
+    isSingleFile: 1
