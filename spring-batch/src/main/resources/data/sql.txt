@@ -99,3 +99,32 @@ truncate table batch_job_execution;
 INSERT INTO BATCH_STEP_EXECUTION_SEQ values(0, '0');
 INSERT INTO BATCH_JOB_EXECUTION_SEQ values(0, '0');
 INSERT INTO BATCH_JOB_SEQ values(0, '0');
+
+
+create table conf_table_execution
+(
+    table_id                  int auto_increment primary key,
+    select_sql                varchar(1000) null,
+    separation                varchar(2)    null,
+    writer_table_name         varchar(100)  null,
+    writer_column_names       varchar(1000) null,
+    writer_file_name          varchar(100)  null,
+    reader_column_names       varchar(1000) null,
+    processor_execution_class varchar(100)  null,
+    id_column_name            varchar(100)  null,
+    conf_status               int(2)        null
+)
+comment '配置表';
+
+create table src_ttss_floor_data
+(
+    billing_cycle_id int          null,
+    class_type       int          null,
+    batch            int          null,
+    amount_type      int          null,
+    amount           bigint(18)   null,
+    reseller_id      varchar(20)  null,
+    reseller_name    varchar(100) null,
+    data_id          int auto_increment primary key
+)
+comment '清单表';
