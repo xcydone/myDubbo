@@ -74,7 +74,7 @@
         <lombok.version>1.18.10</lombok.version>
         <pagehelper.version>4.0.0</pagehelper.version>
         <hutool.version>5.1.5</hutool.version>
-        <quartz.version>2.3.0</quartz.version>
+        <quartz.version>2.3.2</quartz.version>
 
         <!--commons-->
         <commons-lang.version>2.6</commons-lang.version>
