@@ -1,0 +1,14 @@
+10:41:03.099 ERROR  [main] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'myBean', defined in class path resource [com/crossyf/dubbo/springtest/config/TestConfig.class], could not be registered. A bean with that name has already been defined in file [E:\eclipse\practisespace\dubbo-use\spring-test\target\classes\com\crossyf\dubbo\springtest\test\MyBean.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
