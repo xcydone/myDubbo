@@ -42,7 +42,7 @@
         <commons-beanutils.version>1.9.3</commons-beanutils.version>
         <commons-net.version>3.6</commons-net.version>
         <commons-io.version>2.6</commons-io.version>
-        <commons-compress.version>1.18</commons-compress.version>
+        <commons-compress.version>1.19</commons-compress.version>
 
         <jcraft.version>0.1.54</jcraft.version>
     </properties>
