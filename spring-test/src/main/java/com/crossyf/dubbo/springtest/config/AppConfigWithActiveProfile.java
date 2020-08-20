@@ -1,6 +1,6 @@
 package com.crossyf.dubbo.springtest.config;
 
-import com.crossyf.dubbo.springtest.test.Subject;
+import com.crossyf.dubbo.springtest.test.beanTest.Subject;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

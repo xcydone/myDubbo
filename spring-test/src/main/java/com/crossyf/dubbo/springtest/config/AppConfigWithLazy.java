@@ -1,9 +1,8 @@
 package com.crossyf.dubbo.springtest.config;
 
-import com.crossyf.dubbo.springtest.test.MyBean;
+import com.crossyf.dubbo.springtest.test.beanTest.MyBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 
 /*@Lazy*/
 @Configuration

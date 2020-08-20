@@ -1,8 +1,8 @@
 package com.crossyf.dubbo.springtest.config;
 
-import com.crossyf.dubbo.springtest.test.FirstBean;
-import com.crossyf.dubbo.springtest.test.SecondBean;
-import com.crossyf.dubbo.springtest.test.ThirdBean;
+import com.crossyf.dubbo.springtest.test.beanTest.FirstBean;
+import com.crossyf.dubbo.springtest.test.beanTest.SecondBean;
+import com.crossyf.dubbo.springtest.test.beanTest.ThirdBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;

@@ -1,4 +1,4 @@
-package com.crossyf.dubbo.springtest.test;
+package com.crossyf.dubbo.springtest.test.beanTest;
 
 import lombok.Data;
 

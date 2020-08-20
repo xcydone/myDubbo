@@ -1,13 +1,8 @@
 package com.crossyf.dubbo.springtest;
 
 import com.crossyf.dubbo.springtest.config.*;
-import com.crossyf.dubbo.springtest.test.FirstBean;
-import com.crossyf.dubbo.springtest.test.MyBean;
-import com.crossyf.dubbo.springtest.test.Subject;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
-import org.springframework.boot.SpringApplication;
+import com.crossyf.dubbo.springtest.test.beanTest.FirstBean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
