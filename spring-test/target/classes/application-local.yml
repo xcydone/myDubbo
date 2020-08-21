@@ -8,3 +8,7 @@ spring:
 
 logging:
   config: classpath:logback-spring.xml
+
+hehe:
+  haha: BILL_INTER_TAXBAL_${latn_id}-${yyyymm}\d{2}-\d+.txt
+  haha2: BILL_INTER_TAXBAL_{latn_id}-{yyyymm}\d{2}-\d+.txt

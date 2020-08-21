@@ -11,8 +11,8 @@ public class TestConfig {
     * @Bean(initMethod = "init", destroyMethod = "destroy")
     * 注解： 等同于在init方法上加  @PostConstruct 注解 和 destroy 方法上加  @PreDestroy 注解
     * */
-    @Bean
+   /* @Bean
     public MyBean myBean(){
         return new MyBean();
-    }
+    }*/
 }

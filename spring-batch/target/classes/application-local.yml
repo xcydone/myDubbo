@@ -34,3 +34,6 @@ ftp:
     sourcefilepath: /ttss
     prefix: BILL_INTER_TAXBAL_${latn_id}-${yyyymm}\d{2}-\d+.txt
     isSingleFile: 1
+
+hehe:
+  haha: BILL_INTER_TAXBAL_${latn_id}-${yyyymm}\d{2}-\d+.txt
