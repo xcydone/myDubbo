@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /*@Lazy*/
 @Configuration
 public class AppConfigWithLazy {
-    @Bean
+    /*@Bean
     public MyBean myBean(){
         System.out.println("myBean Initialized");
         return new MyBean();
@@ -17,5 +17,5 @@ public class AppConfigWithLazy {
     public MyBean IfLazyInit(){
         System.out.println("initialized");
         return new MyBean();
-    }
+    }*/
 }

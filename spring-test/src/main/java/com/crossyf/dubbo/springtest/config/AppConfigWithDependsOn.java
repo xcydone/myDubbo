@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
-@DependsOn
+/*@DependsOn*/
 @Configuration
 public class AppConfigWithDependsOn {
 
@@ -15,10 +15,10 @@ public class AppConfigWithDependsOn {
     // @DependsOn注释到类上时，自动解决方法依赖问题，依次顺序是 firstBean secondBean thirdBean
 
     @Bean("firstBean")
-    /*@DependsOn(value = {
+    @DependsOn(value = {
             "secondBean",
             "thirdBean"
-    })*/
+    })
     public FirstBean firstBean() {
         return new FirstBean();
     }

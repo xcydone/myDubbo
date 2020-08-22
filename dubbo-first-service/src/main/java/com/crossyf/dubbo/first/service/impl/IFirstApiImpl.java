@@ -6,7 +6,7 @@ import com.crossyf.dubbo.first.dto.PersonDto;
 import com.crossyf.dubbo.first.dto.PersonQryDto;
 import com.crossyf.dubbo.first.entity.Person;
 import com.crossyf.dubbo.first.mapper.PersonMapper;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@Service
+@DubboService
 public class IFirstApiImpl implements IFirstApi {
     @Autowired
     PersonMapper personMapper;

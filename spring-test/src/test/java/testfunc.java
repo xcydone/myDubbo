@@ -21,4 +21,5 @@ public class testfunc {
         System.out.println(popo.getHaha());
         System.out.println(popo2.getHaha2());
     }
+
 }

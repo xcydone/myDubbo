@@ -11,18 +11,18 @@ public class AppConfigWithPrimary {
     // 方法二： 没有@Primary 注解 bean后面取别名
     // 方法二： 没有@Primary 注解 用 @Qualifier 可以区别开使用哪个bean  @Qualifier也可以和 @Autowired 一起使用注入
 
-    @Bean/*("myBeanOne")*/
+    /*@Bean*//*("myBeanOne")*//*
     @Qualifier("myBeanOne")
     public MyBean myBeanOne(){
         System.out.println("myBeanOne");
         return new MyBean();
     }
 
-    @Bean/*("myBeanTwo")*/
+    @Bean*//*("myBeanTwo")*//*
     @Qualifier("myBeanTwo")
-    /*@Primary*/
+    *//*@Primary*//*
     public MyBean myBeanTwo(){
         System.out.println("myBeanTwo");
         return new MyBean();
-    }
+    }*/
 }

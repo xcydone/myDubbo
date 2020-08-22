@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Profile;
 @Profile("like")
 @Configuration
 public class AppConfigWithActiveProfile {
-    @Bean
+    /*@Bean
     public Subject subject(){
         Subject subject = new Subject();
         subject.setLike("物理");
         return subject;
-    }
+    }*/
 
 
     // https://www.cnblogs.com/cxuanBlog/p/11179439.html

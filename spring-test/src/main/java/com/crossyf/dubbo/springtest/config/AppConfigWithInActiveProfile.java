@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Profile;
 @Profile("wenke")
 @Configuration
 public class AppConfigWithInActiveProfile {
-    @Bean
+    /*@Bean
     public Subject subject(){
         Subject subject = new Subject();
         subject.setWenke("历史");
         return subject;
-    }
+    }*/
 }

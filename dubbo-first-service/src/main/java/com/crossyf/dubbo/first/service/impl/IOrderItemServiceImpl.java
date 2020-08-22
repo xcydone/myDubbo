@@ -8,11 +8,11 @@ import com.crossyf.dubbo.first.entity.OrderFile;
 import com.crossyf.dubbo.first.item.IOrderItemHandle;
 import com.crossyf.dubbo.first.item.OrderItemContent;
 import com.crossyf.dubbo.first.mapper.OrderFileMapper;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Service
+@DubboService
 public class IOrderItemServiceImpl implements IOrderItemService {
     @Autowired
     private OrderItemContent orderItemContent;

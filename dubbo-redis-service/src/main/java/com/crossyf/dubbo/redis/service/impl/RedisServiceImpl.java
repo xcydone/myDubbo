@@ -2,12 +2,12 @@ package com.crossyf.dubbo.redis.service.impl;
 
 import com.crossyf.dubbo.common.utils.RedisUtil;
 import com.crossyf.dubbo.redis.api.IRedisService;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-@Service
+@DubboService
 public class RedisServiceImpl implements IRedisService {
     @Autowired
     RedisUtil redisUtil;

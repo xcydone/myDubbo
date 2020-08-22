@@ -1,0 +1,2 @@
+11:27:20.259 WARN   [main] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.crossyf.dubbo.springtest]' package. Please check your configuration.
+11:28:14.430 WARN   [main] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.crossyf.dubbo.springtest]' package. Please check your configuration.
