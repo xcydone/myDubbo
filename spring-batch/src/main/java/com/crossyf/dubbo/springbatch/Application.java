@@ -22,12 +22,12 @@ public class Application {
 		try{
 
 			/* ------------- 场景一： localFileToMysqlJob or localDirectoryToMysqlJob------------- */
-			Job localDirectoryToMysqlJob = (Job) context.getBean("localDirectoryToMysqlJob");
+			/*Job localDirectoryToMysqlJob = (Job) context.getBean("localDirectoryToMysqlJob");
 			paramBuilder.addLong("DS", System.currentTimeMillis());
 			paramBuilder.addString("tableId", "1000");
 			paramBuilder.addString("fileParentPath", "F:\\downLoadFile\\");
 			JobExecution jobExecution = launcher.run(localDirectoryToMysqlJob, paramBuilder.toJobParameters());
-
+*/
 			/*Job localFileToMysqlJob = (Job) context.getBean("localFileToMysqlJob");
 			paramBuilder.addLong("DS", System.currentTimeMillis());
 			paramBuilder.addString("tableId", "1000");
@@ -81,6 +81,10 @@ public class Application {
 			paramBuilder.addString("tableId", "1002");
 			paramBuilder.addString("${billing_cycle_id}", "202007");
 			JobExecution jobExecution = launcher.run(job, paramBuilder.toJobParameters());*/
+
+			Job job= (Job) context.getBean("job7");
+			paramBuilder.addLong("DS", System.currentTimeMillis());
+			JobExecution jobExecution = launcher.run(job, paramBuilder.toJobParameters());
 
 
 			System.out.println("JobExecution : " + jobExecution.toString());

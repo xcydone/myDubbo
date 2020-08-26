@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  * @author zuos
  * @since 2020-08-10
  */
-@DubboService
+@Service
 @Slf4j
 public class ConfTableExecutionServiceImpl implements IConfTableExecutionService {
     @Autowired
