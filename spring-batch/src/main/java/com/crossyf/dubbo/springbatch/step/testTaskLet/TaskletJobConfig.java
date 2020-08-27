@@ -8,6 +8,7 @@ import org.springframework.batch.core.job.flow.Flow;
 import org.springframework.batch.core.job.flow.JobExecutionDecider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -38,7 +39,6 @@ public class TaskletJobConfig {
 
     @Autowired
     private JobExecutionDecider myAddDecider;
-
 
     @Bean
     public Job job1() {
