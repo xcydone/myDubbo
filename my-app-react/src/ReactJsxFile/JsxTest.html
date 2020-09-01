@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="example"></div>
+    <div id="example2"></div>
+    <script  type="text/javascript" src="../reactJs/react.development.js" ></script>
+    <script  type="text/javascript" src="../reactJs/react-dom.development.js" ></script>
+    <script  type="text/javascript" src="../reactJs/babel.min.js"></script>
+
+    <script type="text/javascript">
+        /**
+         * 1.创建虚拟Dom
+         * 2.渲染虚拟Dom
+         */
+        const  str = "I Like You"
+        const  strId = "LikeId"
+        var element  = React.createElement("h1",{id:strId},str.toUpperCase())
+        ReactDOM.render(element,document.getElementById("example"))
+
+    </script>
+
+    <script type="text/babel">
+        var  element1 = <h1 id={strId}>{str.toLocaleLowerCase()}</h1>
+        ReactDOM.render(element1,document.getElementById("example2"))
+    </script>
+
+
+</body>
+</html>
