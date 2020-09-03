@@ -1,11 +1,14 @@
 package com.crossyf.dubbo.springtest;
 
+import cn.hutool.extra.spring.SpringUtil;
 import com.crossyf.dubbo.springtest.config.*;
 import com.crossyf.dubbo.springtest.test.beanTest.FirstBean;
 import com.crossyf.dubbo.springtest.test.beanTest.MyBean;
+import com.crossyf.dubbo.springtest.test.testEmail.SendEmail;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
@@ -13,7 +16,7 @@ public class Application {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(Application.class, args);
+		/*SpringApplication.run(Application.class, args);*/
 
 		/*AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TestConfig.class);
 		// context.getBean("myBean");
@@ -53,6 +56,14 @@ public class Application {
 		/*AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfigWithDependsOn.class);
 		context.getBean(FirstBean.class);
 		context.close();*/
+
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+		SendEmail sendEmail = context.getBean(SendEmail.class);
+		try{
+			sendEmail.send();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -1,4 +1,7 @@
-package com.crossyf.dubbo.springtest.test.testThread;
+package com.crossyf.dubbo.springtest.test.testThread.publicTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Processor1 extends Thread{
 
@@ -7,7 +10,15 @@ public class Processor1 extends Thread{
     @Override
     public void run() {
 
-        Thread currThread = Thread.currentThread ();
+        while(true){
+            if(i > 5){
+                break;
+            }
+            System.out.println("进程1执行了");
+            i++;
+        }
+
+        /*Thread currThread = Thread.currentThread ();
         synchronized (currThread){
             while(true){
                 if(i > 5){
@@ -17,6 +28,6 @@ public class Processor1 extends Thread{
                 i++;
                 currThread.notify();
             }
-        }
+        }*/
     }
 }

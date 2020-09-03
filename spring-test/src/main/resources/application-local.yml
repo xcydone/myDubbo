@@ -12,3 +12,9 @@ logging:
 hehe:
   haha: BILL_INTER_TAXBAL_${latn_id}-${yyyymm}\d{2}-\d+.txt
   haha2: BILL_INTER_TAXBAL_{latn_id}-{yyyymm}\d{2}-\d+.txt
+
+mail:
+  host: smtp.qq.com
+  username: 1641265515@qq.com
+  password: sgfskdleeajhfdbi
+  filePath: E:/dataSource/

@@ -1,10 +1,18 @@
-package com.crossyf.dubbo.springtest.test.testThread;
+package com.crossyf.dubbo.springtest.test.testThread.publicTest;
 
 public class Processor2 extends Thread{
     public int i = 1;
 
     @Override
     public void run() {
+
+        while(true){
+            if(i > 5){
+                break;
+            }
+            System.out.println("进程2执行了");
+            i++;
+        }
 
         /*Thread currThread = Thread.currentThread ();
         synchronized (currThread){
@@ -17,7 +25,7 @@ public class Processor2 extends Thread{
                 currThread.notify();
             }
         }*/
-        Thread currThread = Thread.currentThread ();
+        /*Thread currThread = Thread.currentThread ();
         synchronized (currThread){
             while ("t1".equals (currThread.getName ())) {
                 System.out.println ("当前线程是t1");
@@ -30,10 +38,10 @@ public class Processor2 extends Thread{
                 }
             }
             done();
-        }
+        }*/
     }
 
-    public synchronized void done () {
+    /*public synchronized void done () {
         System.out.println ("更改完毕");
         System.out.println ("当前线程是t2");
         while(true){
@@ -43,5 +51,5 @@ public class Processor2 extends Thread{
             System.out.println("进程2执行了");
             i++;
         }
-    }
+    }*/
 }

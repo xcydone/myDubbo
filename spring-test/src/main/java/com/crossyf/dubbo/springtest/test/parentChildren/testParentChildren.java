@@ -2,32 +2,28 @@ package com.crossyf.dubbo.springtest.test.parentChildren;
 
 public class testParentChildren {
     public static void main(String[] args){
-        String str = "abc";
-        System.out.print(str.codePointAt(0));
 
-        char data[] = {'a', 'b', 'c'};
-        char[] data2 = {'a', 'b', 'c'};
-        String dtt = new String(data);
-        String dtt2 = new String(data2);
-
-        /*testParentAndChildren();*/
+        testParentAndChildren();
     }
 
     public static  void testParentAndChildren() {
-        /*Parent pc=new Children();
-        System.out.println("**********");
-        pc.hh();
-        System.out.println("**********");*/
-
         /*Parent pp=new Parent();
         System.out.println("**********");
         pp.hh();
-        System.out.println("**********"); */
+        System.out.println("**********");*/
 
-        Children cc = new Children();
+        Parent pc=new Children("child1","12");
+        System.out.println("**********");
+        pc.hh();  // pc调不到child的方法
+        System.out.println("**********");
+
+        /*Children cc = new Children("child1","12");
         System.out.println("**********");
         cc.hh();
-        System.out.println("**********");
+        *//*cc.name = "";*//*
+        cc.parentFun();
+        cc.childFun();
+        System.out.println("**********");*/
 
         /*Children cp = new Parent();
         System.out.println("**********");*/
