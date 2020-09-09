@@ -1,5 +1,7 @@
 import com.crossyf.dubbo.springtest.Application;
 import com.crossyf.dubbo.springtest.dto.ConfTableExecutionDto;
+import com.crossyf.dubbo.springtest.dto.PartnerDto;
+import com.crossyf.dubbo.springtest.dto.PartnerQryDto;
 import com.crossyf.dubbo.springtest.entity.ConfTableExecution;
 import com.crossyf.dubbo.springtest.entity.Partner;
 import com.crossyf.dubbo.springtest.mapper.ConfTableExecutionMapper;
@@ -13,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
+import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
@@ -48,10 +50,54 @@ public class testfunc {
     @Test
     public void testMybatis20() {
         Partner po = new Partner();
-        po.setId("de2d44f2rdsfgre-322gyu3-1243-3fwfr");
         po.setName20("kjde");
         po.setLevelHehis("haha");
         partnerService.insertGG(po);
+    }
+
+    @Test
+    public void testMybatisParam() {
+        String name = "尚";
+        String leveName = "体育";
+        List<PartnerDto> pls = partnerService.findPartnerByParam(name, leveName);
+        System.out.println(pls.toString());
+    }
+
+    @Test
+    public void testMybatisEntityLike() {
+        PartnerQryDto qryDto = new PartnerQryDto();
+        qryDto.setName("尚");
+        qryDto.setLevelName("体育");
+        List<PartnerDto> pls = partnerService.findPartnerByEntity(qryDto);
+        System.out.println(pls.toString());
+    }
+
+    @Test
+    public void testMybatisEntityChoose() {
+        PartnerQryDto qryDto = new PartnerQryDto();
+        /*qryDto.setName("尚");*/
+        qryDto.setLevelName("体育");
+        List<PartnerDto> pls = partnerService.findPartnerTwoOne(qryDto);
+        System.out.println(pls.toString());
+    }
+
+    @Test
+    public void testMybatisUpdate() {
+        PartnerQryDto qryDto = new PartnerQryDto();
+        qryDto.setId(11997);
+        qryDto.setName("尚可可");
+        qryDto.setLevelName("体育");
+        partnerService.updatePartnerById(qryDto);
+        System.out.println(partnerService.findPartnerByParam("尚可可",null).toString());
+    }
+
+    @Test
+    public void testMybatisSelectIn() {
+        List status = new ArrayList();
+        status.add(1100);
+        status.add(1200);
+        List<PartnerDto> pls = partnerService.findPartnerInStatus(status);
+        System.out.println(pls.toString());
     }
 
 }

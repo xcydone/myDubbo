@@ -1,11 +1,11 @@
-package com.crossyf.dubbo.springtest.entity;
-
-import java.io.Serializable;
+package com.crossyf.dubbo.springtest.dto;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -16,11 +16,9 @@ import lombok.experimental.Accessors;
  * @since 2020-09-08
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-public class Partner implements Serializable {
+public class PartnerDto implements Serializable {
 
-    private static final long serialVersionUID = -6770043148715272125L;
+    private static final long serialVersionUID = 8948919281390136724L;
 
     private int id;
 
