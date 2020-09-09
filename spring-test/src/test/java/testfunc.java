@@ -100,4 +100,27 @@ public class testfunc {
         System.out.println(pls.toString());
     }
 
+    @Test
+    public void testMybatisSelectLang() {
+        String name = "尚";
+        String leveName = "体育";
+        List<PartnerDto> pls = partnerService.findPartnerByLang(name, leveName);
+        System.out.println(pls.toString());
+    }
+
+    @Test
+    public void testMybatisSelectScript() {
+        String name = "尚";
+        String leveName = "体育";
+        List<PartnerDto> pls = partnerService.findPartnerByScript(name, leveName);
+        System.out.println(pls.toString());
+    }
+
+    @Test
+    public void testMybatisSelectMap() {
+        int id = 11988;
+        Map<String, Object> cols = partnerService.findPartnerMap(id);
+        System.out.println(cols.toString());
+    }
+
 }

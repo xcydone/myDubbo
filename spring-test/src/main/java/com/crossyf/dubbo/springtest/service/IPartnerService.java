@@ -29,4 +29,11 @@ public interface IPartnerService{
     void updatePartnerById(PartnerQryDto qryDto);
 
     List<PartnerDto> findPartnerInStatus(List status);
+
+    List<PartnerDto> findPartnerByLang(String name, String levelName);
+
+    List<PartnerDto> findPartnerByScript(String name, String levelName);
+
+    Map<String, Object> findPartnerMap(int id);
+
 }

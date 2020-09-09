@@ -126,4 +126,9 @@
         </foreach>
     </select>
 
+
+    <select id="findPartnerMap" parameterType="int" resultType="hashmap">
+      SELECT * FROM partner WHERE id = #{id}
+    </select>
+
 </mapper>

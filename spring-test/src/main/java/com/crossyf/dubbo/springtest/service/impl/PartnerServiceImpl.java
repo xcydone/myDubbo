@@ -55,4 +55,19 @@ public class PartnerServiceImpl implements IPartnerService {
     public List<PartnerDto> findPartnerInStatus(List status){
         return pm.findPartnerInStatus(status);
     }
+
+    @Override
+    public List<PartnerDto> findPartnerByLang(String name, String levelName) {
+        return pm.findPartnerByLang(name, levelName);
+    }
+
+    @Override
+    public List<PartnerDto> findPartnerByScript(String name, String levelName) {
+        return pm.findPartnerByScript(name, levelName);
+    }
+
+    @Override
+    public Map<String, Object> findPartnerMap(int id) {
+        return pm.findPartnerMap(id);
+    }
 }
