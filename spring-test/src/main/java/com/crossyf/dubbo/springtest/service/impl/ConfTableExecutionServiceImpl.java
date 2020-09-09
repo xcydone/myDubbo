@@ -1,14 +1,18 @@
-package com.eshore.springbatch.service.impl;
+package com.crossyf.dubbo.springtest.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.eshore.springbatch.constant.BatchGlobal;
-import com.eshore.springbatch.entity.ConfTableExecution;
-import com.eshore.springbatch.mapper.ConfTableExecutionMapper;
-import com.eshore.springbatch.service.IConfTableExecutionService;
+import com.crossyf.dubbo.springtest.constant.BatchGlobal;
+import com.crossyf.dubbo.springtest.dto.ConfTableExecutionDto;
+import com.crossyf.dubbo.springtest.entity.ConfTableExecution;
+import com.crossyf.dubbo.springtest.mapper.ConfTableExecutionMapper;
+import com.crossyf.dubbo.springtest.service.IConfTableExecutionService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -43,6 +47,24 @@ public class ConfTableExecutionServiceImpl implements IConfTableExecutionService
             BatchGlobal.BATCH_CONF_TABLE_EXECUTION_MAP.put(tableId, confTable);
             return confTable;
         }
+    }
+
+    @Override
+    public List<ConfTableExecutionDto> getConfTableExecutionTwo() {
+        return confTableExecutionMapper.qryTwo();
+    }
+
+    @Override
+    public List<ConfTableExecutionDto> getConfTableExecutionWe() {
+        return confTableExecutionMapper.qryWe();
+    }
+
+    @Override
+    public void insertHH(ConfTableExecutionDto dto) {
+
+        ConfTableExecution cd = new ConfTableExecution();
+        BeanUtils.copyProperties(dto, cd);
+        confTableExecutionMapper.insert(cd);
     }
 
 }

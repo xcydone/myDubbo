@@ -1,4 +1,4 @@
-package com.eshore.springbatch.entity;
+package com.crossyf.dubbo.springtest.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

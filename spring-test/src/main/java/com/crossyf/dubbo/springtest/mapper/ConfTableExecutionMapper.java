@@ -1,7 +1,8 @@
-package com.eshore.springbatch.mapper;
+package com.crossyf.dubbo.springtest.mapper;
 
-import com.eshore.springbatch.entity.ConfTableExecution;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.crossyf.dubbo.springtest.dto.ConfTableExecutionDto;
+import com.crossyf.dubbo.springtest.entity.ConfTableExecution;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -15,4 +16,7 @@ import java.util.List;
  * @since 2020-08-10
  */
 public interface ConfTableExecutionMapper extends BaseMapper<ConfTableExecution> {
+    List<ConfTableExecutionDto> qryTwo();
+
+    List<ConfTableExecutionDto> qryWe();
 }

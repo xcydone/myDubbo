@@ -16,7 +16,7 @@ public class Application {
 
 	public static void main(String[] args) {
 
-		/*SpringApplication.run(Application.class, args);*/
+		SpringApplication.run(Application.class, args);
 
 		/*AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TestConfig.class);
 		// context.getBean("myBean");
@@ -57,13 +57,14 @@ public class Application {
 		context.getBean(FirstBean.class);
 		context.close();*/
 
-		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+		/*ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 		SendEmail sendEmail = context.getBean(SendEmail.class);
 		try{
 			sendEmail.send();
 		}catch (Exception e){
 			e.printStackTrace();
-		}
+		}*/
+
 	}
 
 }

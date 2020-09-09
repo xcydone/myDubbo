@@ -1,6 +1,6 @@
-package com.eshore.springbatch.constant;
+package com.crossyf.dubbo.springtest.constant;
 
-import com.eshore.springbatch.entity.ConfTableExecution;
+import com.crossyf.dubbo.springtest.entity.ConfTableExecution;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

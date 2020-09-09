@@ -1,4 +1,4 @@
-package com.eshore.springbatch.config;
+package com.crossyf.dubbo.springtest.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
@@ -6,12 +6,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * MybatisPlus 配置
- * @author zuos
- * @date 2020/2/5 2:33 上午
- */
-@MapperScan(basePackages = {"com.crossyf.dubbo.springbatch.mapper"})
+@MapperScan(basePackages = {"com.crossyf.dubbo.springtest.mapper"})
 @Configuration
 public class MybatisPlusConfig {
     /**
