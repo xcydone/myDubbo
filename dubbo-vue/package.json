@@ -68,6 +68,7 @@
     "style-loader": "^1.0.0",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
+    "vant": "^2.10.6",
     "vue-easytable": "^1.7.2",
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",

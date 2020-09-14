@@ -48,10 +48,15 @@ import api from './api'
 import GeminiScrollbar from 'vue-gemini-scrollbar'
 import echarts from 'echarts'
 
+import Vant from 'vant'
+import 'vant/lib/index.css'
+
 import '@/assets/style/index.scss'
 
 Vue.use(ElementUI)
 Vue.use(GeminiScrollbar)
+Vue.use(Vant);
+
 Vue.prototype.api = api
 Vue.prototype.$echarts = echarts
 Vue.prototype.baseUrl = 'http://127.0.0.1:8092/'

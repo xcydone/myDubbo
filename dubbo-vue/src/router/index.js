@@ -71,5 +71,9 @@ export default new Router({
     {
       path: '/test/testSummery',
       component: () => import('@/pages/test/testSummery/summ'),
+    },
+    {
+      path: '/test/testVant',
+      component: () => import('@/pages/test/testVant/testVant'),
     }]
 })
