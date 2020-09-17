@@ -44,4 +44,6 @@ public interface PartnerMapper extends BaseMapper<Partner> {
 
     Map<String, Object> findPartnerMap(@Param("id") int id);
 
+    List<PartnerDto> findPartnerStatus(@Param("status") int status);
+
 }

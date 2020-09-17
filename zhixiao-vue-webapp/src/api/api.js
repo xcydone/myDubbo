@@ -89,5 +89,10 @@ export default {
     detail: function (id) {  // @param id 书单id
       return `${API_HOST}/book-list/${book_id}`
     }
+  },
+  test: {
+    getTestMsg() {
+      return `${API_HOST}/test/getMsg`
+    }
   }
 }

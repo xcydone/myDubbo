@@ -123,4 +123,11 @@ public class testfunc {
         System.out.println(cols.toString());
     }
 
+    @Test
+    public void testMybatisSelectunEquals() {
+        int status = 1000;
+        List<PartnerDto> cols = partnerService.findPartnerStatus(status);
+        System.out.println(cols.toString());
+    }
+
 }

@@ -36,8 +36,8 @@ module.exports = {
   // 它支持webPack-dev-server的所有选项
   devServer: {
     // host: "192.168.10.114",
-    host: "127.0.0.1",
-    port: 8080, // 端口号
+    /*host: "127.0.0.1",
+    port: 8090, // 端口号*/
     https: false, // https:{type:Boolean}
     open: true, //配置自动启动浏览器
     // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
@@ -113,7 +113,13 @@ module.exports = {
           '^/chapter': '/chapter'
         }
       },
-      
+      "/test": {
+        target: "http://132.126.3.46:8090",
+        changeOrigin: true,
+        pathRewrite: {
+          '^/test': '/test'
+        }
+      }
     }
   }
 };

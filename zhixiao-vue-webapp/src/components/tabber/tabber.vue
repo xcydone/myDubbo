@@ -25,6 +25,12 @@
         </div>
         <span>搜索</span>
       </router-link>
+      <router-link to="/selfTest" class="tabber-bind" tag="li">
+        <div>
+          <i class="icon iconfont icon-sousuo"></i>
+        </div>
+        <span>测试</span>
+      </router-link>
     </ul>
   </div>
 </template>

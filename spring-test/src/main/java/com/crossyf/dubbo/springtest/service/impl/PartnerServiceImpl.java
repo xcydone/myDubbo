@@ -70,4 +70,9 @@ public class PartnerServiceImpl implements IPartnerService {
     public Map<String, Object> findPartnerMap(int id) {
         return pm.findPartnerMap(id);
     }
+
+    @Override
+    public List<PartnerDto> findPartnerStatus(int status) {
+       return pm.findPartnerStatus(status);
+    }
 }

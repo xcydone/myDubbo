@@ -18,3 +18,10 @@ mail:
   username: 1641265515@qq.com
   password:
   filePath: E:/dataSource/
+
+swagger:
+  basePackage: com.crossyf.dubbo.springtest
+  title: 系统文档api
+  description: 系统文档api描述
+  version: 1.0.0
+  enable: true

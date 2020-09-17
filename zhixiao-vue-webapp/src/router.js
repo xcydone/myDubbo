@@ -13,6 +13,7 @@ import BookRelated from "./page/bookRelated/bookRelated.vue";
 import Search from "./page/search/search.vue";
 import BookDirectory from "./page/bookDirectory/bookDirectory.vue";
 import Reader from "./page/reader/reader.vue";
+import Test from "./page/test/test.vue";
 
 Vue.use(Router);
 
@@ -84,6 +85,11 @@ export default new Router({
       path: "/reader",
       name: "reader",
       component: Reader
+    },
+    {
+      path: "/selfTest",
+      name: "Test",
+      component: Test
     }
   ]
 });

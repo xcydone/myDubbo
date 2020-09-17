@@ -36,4 +36,6 @@ public interface IPartnerService{
 
     Map<String, Object> findPartnerMap(int id);
 
+    List<PartnerDto> findPartnerStatus(int status);
+
 }

@@ -131,4 +131,8 @@
       SELECT * FROM partner WHERE id = #{id}
     </select>
 
+    <select id="findPartnerStatus" parameterType="int" resultType="com.crossyf.dubbo.springtest.dto.PartnerDto">
+      SELECT * FROM partner WHERE status != #{status}
+    </select>
+
 </mapper>

@@ -60,7 +60,7 @@ export default {
   },
   mounted() {
     this.$store.state.isTabber = true;
-    annotation.DubboServiceog('bookcase', store.get("bookcase"));
+    /*annotation.DubboServiceog('bookcase', store.get("bookcase"));*/
     if(store.get("bookcase")) {
       if(store.get("bookcase").length !== 0) {
         var arr = store.get("bookcase");

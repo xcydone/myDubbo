@@ -7,6 +7,7 @@ import com.crossyf.dubbo.springtest.service.IConfTableExecutionService;
 import com.crossyf.dubbo.springtest.service.IPartnerService;
 import com.crossyf.dubbo.springtest.test.testSort.BubbleSort;
 import com.crossyf.dubbo.springtest.test.testSort.InsertSort;
+import com.crossyf.dubbo.springtest.test.testSort.QuickSort;
 import com.crossyf.dubbo.springtest.test.testSort.SelectionSort;
 import com.crossyf.dubbo.springtest.test.testYml.Popo;
 import com.crossyf.dubbo.springtest.test.testYml.Popo2;
@@ -33,6 +34,9 @@ public class testSort {
     @Autowired
     public InsertSort insertSort;
 
+    @Autowired
+    public QuickSort quictSort;
+
     @Test
     public void testBubbleSort() {
         int[] sourceArr = new int[]{3,44,38,5,47,13};
@@ -51,4 +55,13 @@ public class testSort {
         System.out.println(Arrays.toString(insertSort.sort(sourceArr)));
     }
 
+    @Test
+    public void testQuickSort() {
+        int[] sourceArr = new int[]{44,3,38,5,47,13};
+        try {
+            System.out.println(Arrays.toString(quictSort.sort(sourceArr)));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

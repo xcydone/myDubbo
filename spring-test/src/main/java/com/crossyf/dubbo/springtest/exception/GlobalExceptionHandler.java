@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(value = Exception.class)
+    /*@ExceptionHandler(value = Exception.class)
     @ResponseBody
     public JSONObject exceptionHandler(HttpServletRequest request, Exception e) {
         return ReturnMessage.createReturnMessage("4000", e.getMessage());
-    }
+    }*/
 }
