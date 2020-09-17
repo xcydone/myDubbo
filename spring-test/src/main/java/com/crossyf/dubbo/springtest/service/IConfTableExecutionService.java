@@ -15,15 +15,7 @@ import java.util.List;
  */
 public interface IConfTableExecutionService {
 
-    /**
-    * @Description:  查询全局map
-    * @Param: [tableId]
-    * @return: com.eshore.springbatch.entity.ConfTableExecution
-    * @Author: caifang
-    * @Date: 2020/8/11
-    */
     ConfTableExecution getConfTableExecutionMap(Integer tableId);
-
 
     List<ConfTableExecutionDto> getConfTableExecutionTwo();
 
