@@ -1,5 +1,6 @@
 package com.crossyf.dubbo.springtest.test.testListStream;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -19,7 +20,7 @@ public class Employee implements Serializable{
 
     @Override
     public String toString() {
-        return "Employee2{" +
+        return "Employee{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +

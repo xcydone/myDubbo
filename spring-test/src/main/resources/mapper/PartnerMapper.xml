@@ -135,4 +135,8 @@
       SELECT * FROM partner WHERE status != #{status}
     </select>
 
+    <select id="selectDTableId" resultType="java.util.Map">
+        select id from partner WHERE id = #{id}
+    </select>
+
 </mapper>

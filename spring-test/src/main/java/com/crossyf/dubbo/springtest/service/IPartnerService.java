@@ -38,4 +38,6 @@ public interface IPartnerService{
 
     List<PartnerDto> findPartnerStatus(int status);
 
+    Map selectDTableId(int id);
+
 }

@@ -75,4 +75,9 @@ public class PartnerServiceImpl implements IPartnerService {
     public List<PartnerDto> findPartnerStatus(int status) {
        return pm.findPartnerStatus(status);
     }
+
+    @Override
+    public Map selectDTableId(int id) {
+        return pm.selectDTableId(id);
+    }
 }

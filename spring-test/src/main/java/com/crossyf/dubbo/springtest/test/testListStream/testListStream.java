@@ -3,7 +3,9 @@ package com.crossyf.dubbo.springtest.test.testListStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class testListStream {
+
+// strem不会修改原数组
+public class  testListStream {
     public static void main(String[] args){
 
         testList();
@@ -56,7 +58,7 @@ public class testListStream {
         System.out.println(list4);
 
         // 差集 list2-list1
-        List<Integer> list5 = list2.stream().filter(e -> !list1.contains(e)).collect(Collectors.toList());
+        List<Integer> list5 = list2.stream().filter(e -> e != 2).collect(Collectors.toList());
         System.out.println();
         System.out.println("--------------------------差集 list2-list1-----------------------------");
         System.out.println(list5);

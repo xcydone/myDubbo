@@ -46,4 +46,6 @@ public interface PartnerMapper extends BaseMapper<Partner> {
 
     List<PartnerDto> findPartnerStatus(@Param("status") int status);
 
+    Map selectDTableId(@Param("id") int id);
+
 }

@@ -1,11 +1,11 @@
 import com.crossyf.dubbo.springtest.Application;
-import com.crossyf.dubbo.springtest.dto.ConfTableExecutionDto;
-import com.crossyf.dubbo.springtest.dto.PartnerDto;
-import com.crossyf.dubbo.springtest.dto.PartnerQryDto;
+import com.crossyf.dubbo.springtest.dto.*;
 import com.crossyf.dubbo.springtest.entity.ConfTableExecution;
 import com.crossyf.dubbo.springtest.entity.Partner;
 import com.crossyf.dubbo.springtest.mapper.ConfTableExecutionMapper;
 import com.crossyf.dubbo.springtest.service.IConfTableExecutionService;
+import com.crossyf.dubbo.springtest.service.IItemRelService;
+import com.crossyf.dubbo.springtest.service.IItemTableService;
 import com.crossyf.dubbo.springtest.service.IPartnerService;
 import com.crossyf.dubbo.springtest.test.testYml.Popo;
 import com.crossyf.dubbo.springtest.test.testYml.Popo2;
@@ -25,6 +25,12 @@ public class testfunc {
 
     @Autowired
     public Popo2 popo2;
+
+    @Autowired
+    public IItemRelService iItemRelService;
+
+    @Autowired
+    public IItemTableService iItemTableService;
 
     @Test
     public void testYml() {
@@ -129,5 +135,57 @@ public class testfunc {
         List<PartnerDto> cols = partnerService.findPartnerStatus(status);
         System.out.println(cols.toString());
     }
+
+    @Test
+    public void testMybatisSelectMap2() {
+        int id = 11988;
+        Map<String, Object> cols = partnerService.selectDTableId(id);
+        System.out.println(cols.toString());
+    }
+
+    @Test
+    public void testMybatisSelectParent() {
+        int id = 1005;
+        List<ItemRelDto> items = iItemRelService.qryOperList(id);
+        List<Integer> parents = getParent(items);
+        System.out.println(items.toString());
+        System.out.println(parents.toString());
+    }
+
+    public static List<Integer> getParent(List<ItemRelDto> items){
+        List<Integer> parents = new ArrayList<>();
+        for(ItemRelDto item: items){
+            if(item.getParentList().size() != 0){
+                parents.addAll(getParent(item.getParentList()));
+            }
+            parents.add(item.getParentId());
+        }
+
+        return parents;
+    }
+
+
+    @Test
+    public void testMybatisSelectParent2() {
+        int id = 1005;
+        List<ItemTableDto> items = iItemTableService.qryParentOperList(id);
+        List<Integer> parents = getTableParent(items);
+        System.out.println(items.toString());
+        System.out.println(parents.toString());
+    }
+
+    public static List<Integer> getTableParent(List<ItemTableDto> items){
+        List<Integer> parents = new ArrayList<>();
+        for(ItemTableDto item: items){
+            if(item.getParentList().size() != 0){
+                parents.addAll(getTableParent(item.getParentList()));
+            }
+            parents.add(item.getItemId());
+        }
+
+        return parents;
+    }
+
+
 
 }

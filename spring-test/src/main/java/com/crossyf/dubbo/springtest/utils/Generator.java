@@ -47,7 +47,7 @@ public class Generator {
      * mysql -uroot -proot -s  -N -e "select table_name from information_schema.tables where table_schema='security-rbac';"|awk '{print "\""$1"\","}'
      */
     final static String[] tables ={
-            "partner"
+            "item_rel", "item_table"
     };
 
     /**
