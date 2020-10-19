@@ -16,10 +16,6 @@ public class MybatisPlusConfig {
     public PaginationInterceptor paginationInterceptorMysql() {
         PaginationInterceptor page = new PaginationInterceptor();
         page.setDialectType("mysql");
-//        page.setOverflow(true);
-        // 设置最大单页限制数量，默认 500 条，-1 不受限制
-//        page.setLimit(-1);
-        // 开启 count 的 join 优化,只针对部分 left join
         page.setCountSqlParser(new JsqlParserCountOptimize(true));
         return page;
     }
