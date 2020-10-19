@@ -6,12 +6,6 @@ import com.alibaba.fastjson.parser.Feature;
 
 import java.util.*;
 
-/**
- * JSON 工具类
- *
- * @author dukunbiao(null) 2018-07-26
- * https://github.com/dkbnull/Util
- */
 public class JSONUtils {
 
     private static final String WHITESPACE = "   ";

@@ -7,12 +7,6 @@ import java.security.SecureRandom;
 import java.util.Random;
 import java.util.regex.Pattern;
 
-/**
- * String 工具类
- *
- * @author dukunbiao(null)  2018-07-26
- * https://github.com/dkbnull/Util
- */
 public class StringUtils {
 
     public static final String STRING_TYPE_RIGHT = "R";

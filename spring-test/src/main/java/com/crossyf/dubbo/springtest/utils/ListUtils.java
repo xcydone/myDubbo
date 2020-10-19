@@ -2,12 +2,6 @@ package com.crossyf.dubbo.springtest.utils;
 
 import java.util.List;
 
-/**
- * List 工具类
- *
- * @author dukunbiao(null) 2018-09-15
- * https://github.com/dkbnull/Util
- */
 public class ListUtils {
 
     private ListUtils() {

@@ -4,12 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.Map;
 
-/**
- * Map 工具类
- *
- * @author dukunbiao(null) 2018-07-26
- * https://github.com/dkbnull/Util
- */
 public class MapUtils {
 
     private MapUtils() {

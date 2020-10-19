@@ -2,12 +2,6 @@ package com.crossyf.dubbo.springtest.utils;
 
 import org.apache.log4j.Logger;
 
-/**
- * Logger 工具类
- *
- * @author dukunbiao(null)  2018-12-17
- * https://github.com/dkbnull/Util
- */
 public class LoggerUtils {
 
     private static Logger logger;

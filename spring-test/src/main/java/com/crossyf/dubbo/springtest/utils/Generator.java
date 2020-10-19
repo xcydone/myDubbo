@@ -13,14 +13,6 @@ import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * <p>
- * mysql 代码生成器演示例子
- * </p>
- *
- * @author zuos
- * @date 2020/02/4  5:20 下午
- */
 public class Generator {
 
     /**
