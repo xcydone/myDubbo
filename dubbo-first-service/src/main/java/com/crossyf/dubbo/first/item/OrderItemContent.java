@@ -2,13 +2,14 @@ package com.crossyf.dubbo.first.item;
 
 import com.crossyf.dubbo.common.utils.SpringUtil;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItemContent {

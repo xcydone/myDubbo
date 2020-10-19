@@ -1,8 +1,7 @@
-package com.crossyf.dubbo.springtest.test.testChat2;
+package com.crossyf.dubbo.springtest.test.testNIO;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.ServerSocket;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
 import java.nio.charset.Charset;
