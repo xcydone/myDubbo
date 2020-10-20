@@ -13,4 +13,8 @@
         item_id, item_name
     </sql>
 
+    <select id="qryParentOperList" resultType="com.crossyf.dubbo.springtest.dto.ItemTableDto">
+        select * from item_table where item_id = #{itemId}
+    </select>
+
 </mapper>

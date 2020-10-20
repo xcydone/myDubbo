@@ -1,8 +1,7 @@
-package com.crossyf.dubbo.springtest.test.testLm;
+package com.crossyf.dubbo.springtest.test2.testLm;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 

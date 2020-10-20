@@ -12,7 +12,6 @@
     <resultMap id="BaseResultMapDto" type="com.crossyf.dubbo.springtest.dto.ItemTableDto">
         <id column="item_id" property="itemId" />
         <result column="item_name" property="itemName" />
-        <result column="parent_id" property="parentId" />
         <collection property="parentList" ofType="com.crossyf.dubbo.springtest.dto.ItemRelDto"
                     select="qryParentList" column="{parentId = parent_id}"></collection>
     </resultMap>

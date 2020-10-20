@@ -1,4 +1,4 @@
-package com.crossyf.dubbo.springtest.test.testLm;
+package com.crossyf.dubbo.springtest.test2.testLm;
 
 import java.util.*;
 import java.util.stream.Collectors;
