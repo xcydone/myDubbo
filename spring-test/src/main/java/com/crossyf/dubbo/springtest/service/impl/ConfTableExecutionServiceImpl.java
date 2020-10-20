@@ -14,14 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author zuos
- * @since 2020-08-10
- */
 @Service
 @Slf4j
 public class ConfTableExecutionServiceImpl implements IConfTableExecutionService {

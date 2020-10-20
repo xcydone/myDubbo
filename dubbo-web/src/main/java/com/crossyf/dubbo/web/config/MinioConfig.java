@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MinioConfig {
 
-    @ConfigurationProperties(prefix = "minio")
+    /*@ConfigurationProperties(prefix = "minio")
     @Bean
     public MinioTemplate minioTemplate(){
         return new MinioTemplate();
-    }
+    }*/
 }

@@ -9,14 +9,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
-/**
- * <p>
- *  服务类
- * </p>
- *
- * @author zuos
- * @since 2020-09-08
- */
 public interface IPartnerService{
     void insertGG(Partner po);
 

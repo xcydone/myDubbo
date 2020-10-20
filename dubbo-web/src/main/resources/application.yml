@@ -8,7 +8,7 @@ dubbo:
     name: Customer
     id: Customer
   registry:               #注册中心配置，用于配置连接注册中心相关信息。
-    address: zookeeper://xcydtwo:2181,xcydthree:2181,xcydfour:2181,xcydfive:2181
+    address: zookeeper://127.0.01:2181
   scan:
     base-packages: com.crossyf.dubbo.*
   consumer:
@@ -54,6 +54,6 @@ minio:
 
 hbase:
   connectKey: hbase.zookeeper.quorum
-  connectValue: xcydtwo:2181,xcydthree:2181,xcydfour:2181,xcydfive:2181
+  connectValue: 127.0.0.1
   nameSpace: fs.defaultFS
   defaultPath: hdfs://myha01/hbase224

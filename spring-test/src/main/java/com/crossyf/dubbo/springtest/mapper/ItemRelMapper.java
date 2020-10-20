@@ -7,14 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author zuos
- * @since 2020-09-22
- */
 public interface ItemRelMapper extends BaseMapper<ItemRel> {
     List<ItemRelDto> qryOperList(@Param("itemId") int itemId);
 }

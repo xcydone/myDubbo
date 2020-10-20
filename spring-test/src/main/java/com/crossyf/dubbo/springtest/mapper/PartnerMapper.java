@@ -12,14 +12,6 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 import java.util.Map;
 
-/**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author zuos
- * @since 2020-09-08
- */
 public interface PartnerMapper extends BaseMapper<Partner> {
     List<PartnerDto> findPartnerByParam(@Param("name") String name, @Param("levelName") String levelName);
 

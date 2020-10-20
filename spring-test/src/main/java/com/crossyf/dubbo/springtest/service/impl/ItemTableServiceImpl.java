@@ -12,14 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author zuos
- * @since 2020-09-22
- */
 @Service
 public class ItemTableServiceImpl extends ServiceImpl<ItemTableMapper, ItemTable> implements IItemTableService {
 

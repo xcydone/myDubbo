@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Data
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItemContent {

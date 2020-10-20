@@ -1,11 +1,6 @@
 package com.crossyf.dubbo.springtest.constant;
 
-/**
- * 常量类
- *
- * @author dukunbiao(null)  2018-09-23
- * https://github.com/dkbnull/SpringBootDemo
- */
+
 public class DemoConstants {
 
     public static final String SIGN = "sign";

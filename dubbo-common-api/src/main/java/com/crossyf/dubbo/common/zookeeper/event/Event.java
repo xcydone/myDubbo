@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Zookeeper事件类
- * @author zuos
+ * @author caif
  * @date 2020/4/3 11:09 上午
  */
 public class Event implements Serializable {

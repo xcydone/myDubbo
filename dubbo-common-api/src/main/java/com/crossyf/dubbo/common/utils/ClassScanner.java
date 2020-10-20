@@ -28,7 +28,7 @@ import java.util.Set;
  * 根据包路径和注解扫描获取类的工具类
  * </p>
  *
- * @author zuos
+ * @author caif
  * @since 2020-02-28
  */
 public class ClassScanner implements ResourceLoaderAware {

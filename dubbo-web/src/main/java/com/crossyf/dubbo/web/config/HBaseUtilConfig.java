@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class HBaseUtilConfig {
     /*@ConfigurationProperties(prefix = "hbase")*/
-    @Bean
+    /*@Bean
     public HBaseUtil HBaseUtil(){
         return new HBaseUtil();
-    }
+    }*/
 }

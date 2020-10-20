@@ -20,7 +20,7 @@ import java.util.concurrent.*;
 
 /**
  * Zookeeper事件管理类
- * @author zuos
+ * @author caif
  * @date 2020/4/3 11:09 上午
  */
 public class EventManager {

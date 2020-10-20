@@ -12,14 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author zuos
- * @since 2020-09-08
- */
 @Service
 public class PartnerServiceImpl implements IPartnerService {
 

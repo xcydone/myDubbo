@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
 public class BatchGlobal {
     public static Map<Integer, ConfTableExecution> BATCH_CONF_TABLE_EXECUTION_MAP = new HashMap();
     public static String SELECT = "select";

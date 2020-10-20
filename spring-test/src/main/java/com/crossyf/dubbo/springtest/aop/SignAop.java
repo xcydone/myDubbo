@@ -32,7 +32,7 @@ public class SignAop {
      *
      * @param joinPoint
      * @throws Exception
-     */
+     *//*
     @Before("signAop()")
     public void doBefore(JoinPoint joinPoint) throws Exception {
 
@@ -57,14 +57,14 @@ public class SignAop {
         }
     }
 
-    /**
+    *//**
      * 后置通知：在某连接点正常完成后执行的通知，通常在一个匹配的方法返回的时候执行
      * 对接口返回参数进行签名
      *
      * @param joinPoint
      * @param params
      * @return
-     */
+     *//*
     @AfterReturning(value = "signAop()", returning = "params")
     public JSONObject doAfterReturning(JoinPoint joinPoint, JSONObject params) {
         String data = JSONUtils.getJSONString(params, DemoConstants.DATA);
@@ -80,6 +80,6 @@ public class SignAop {
         LoggerUtils.getLogger().info(strLog + "[返回参数] " + params);
 
         return params;
-    }
+    }*/
 
 }

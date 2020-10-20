@@ -3,6 +3,7 @@ package com.crossyf.dubbo.server.config;
 import com.crossyf.dubbo.common.utils.FastJson2JsonRedisSerializer;
 import com.crossyf.dubbo.common.utils.RedisTemplate;
 import com.crossyf.dubbo.common.utils.RedisUtil;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +20,7 @@ import java.time.Duration;
 
 @ConfigurationProperties(prefix = "redis")
 @Configuration
+@Data
 @Slf4j
 public class RedisConfig {
     /*@Value("${redis.hostName}")
@@ -101,37 +103,5 @@ public class RedisConfig {
         RedisUtil redisUtil = new RedisUtil();
         redisUtil.setRedisTemplate(redisTemplate);
         return redisUtil;
-    }
-
-    public String getHostName() {
-        return hostName;
-    }
-
-    public void setHostName(String hostName) {
-        this.hostName = hostName;
-    }
-
-    public Integer getPort() {
-        return port;
-    }
-
-    public void setPort(Integer port) {
-        this.port = port;
-    }
-
-    public Integer getDatabase() {
-        return database;
-    }
-
-    public void setDatabase(Integer database) {
-        this.database = database;
-    }
-
-    public Integer getTimeout() {
-        return timeout;
-    }
-
-    public void setTimeout(Integer timeout) {
-        this.timeout = timeout;
     }
 }

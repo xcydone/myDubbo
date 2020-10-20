@@ -28,11 +28,11 @@ public class orderController {
     @Reference
     private IOrderItemService orderItemService;
 
-    @Autowired(required = false)
+    /*@Autowired(required = false)
     private MinioTemplate minioTemplate;
 
     @Autowired
-    private HBaseUtil hBaseUtil;
+    private HBaseUtil hBaseUtil;*/
 
     @ApiOperation(value = "工单环节处理")
     @PostMapping("/itemDeal")
@@ -41,7 +41,7 @@ public class orderController {
         return orderItemService.itemDeal(itemDealDto);
     }
 
-    @ApiOperation(value = "上传文件接口")
+    /*@ApiOperation(value = "上传文件接口")
     @PostMapping("/uploadFile")
     @ResponseBody
     public void uploadFile(@RequestParam("file")MultipartFile file){
@@ -95,5 +95,5 @@ public class orderController {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }*/
 }

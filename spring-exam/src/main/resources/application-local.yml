@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/xcydtwo?useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true&characterEncoding=utf8
+    username: root
+    password: 345678
+
+swagger:
+  basePackage: com.xcydone.hello.springexam
+  title: 系统文档api
+  description: 系统文档api描述
+  version: 1.0.0
+  enable: true

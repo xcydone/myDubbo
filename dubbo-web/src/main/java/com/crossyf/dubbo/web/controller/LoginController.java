@@ -30,9 +30,6 @@ import java.util.Map;
 @RequestMapping("/login")
 @CrossOrigin
 public class LoginController {
-    @Reference
-    private IFirstApi firstApi;
-
     @Autowired
     private JWTUtil jwtUtil;
 

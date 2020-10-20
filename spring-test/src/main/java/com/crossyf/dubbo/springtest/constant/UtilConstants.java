@@ -1,11 +1,5 @@
 package com.crossyf.dubbo.springtest.constant;
 
-/**
- * 常量类
- *
- * @author dukunbiao(null) 2018-08-08
- * https://github.com/dkbnull/Util
- */
 public class UtilConstants {
 
     public static final String CHARSET_UTF8 = "UTF-8";
