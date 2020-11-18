@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crossyf.dubbo.springtest.mapper.ItemRelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.crossyf.dubbo.springtest.entity.ItemRel">
+        <id column="rel_id" property="relId" />
+        <result column="item_id" property="itemId" />
+        <result column="parent_id" property="parentId" />
+    </resultMap>
+
+    <resultMap id="BaseResultMapDto" type="com.crossyf.dubbo.springtest.dto.ItemTableDto">
+        <id column="item_id" property="itemId" />
+        <result column="item_name" property="itemName" />
+        <collection property="parentList" ofType="com.crossyf.dubbo.springtest.dto.ItemRelDto"
+                    select="qryParentList" column="{parentId = parent_id}"></collection>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        rel_id, item_id, parent_id
+    </sql>
+
+    <select id="qryParentList" parameterType="java.util.Map" resultMap="BaseResultMapDto">
+        select * from item_rel ir
+        left join item_table it on it.item_id = ir.item_id
+        where ir.item_id = #{parentId}
+    </select>
+
+    <select id="qryOperList" resultMap="BaseResultMapDto">
+        select * from item_table it
+        where it.item_id = #{itemId}
+    </select>
+
+</mapper>
